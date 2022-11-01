@@ -1,11 +1,11 @@
-import { pages } from '../public/content.json';
+import { clients } from '@/lib/clients';
 import Link from 'next/link';
 
 export default function Page() {
   return (
     <div className='space-y-6'>
       <div className='space-y-8 text-white'>
-        {pages.clients.clients.map(client => {
+        {clients.clients.map(client => {
           return (
             <div key={client.name} className='space-y-3'>
               <div className='text-xs font-semibold uppercase tracking-wider text-zinc-500'>{client.name}</div>
