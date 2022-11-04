@@ -1,9 +1,9 @@
 import { Pages } from '@/lib/content'
-import { pages } from '@/lib/content.json'
+import content from '@/lib/content.json'
 import Link from 'next/link'
 
 export default function Page() {
-  const { clients } = pages as Pages
+  const { clients } = content.pages as Pages
 
   return (
     <div className="">

@@ -90,45 +90,45 @@ address {
 
 .marquee--reverse {
   .marquee__content {
-      animation: marqueeboo 15s linear infinite;
+    animation: marqueeboo 15s linear infinite;
   }
 }
 
 .marquee--primary {
   .marquee__content {
-      color: $color-primary;
+    color: $color-primary;
   }
 }
 .marquee--primary-dark {
   .marquee__content {
-      color: $color-primary-dark;
+    color: $color-primary-dark;
   }
 }
 
 .marquee--slow {
   .marquee__content {
-      animation-duration: 30s !important;
+    animation-duration: 30s !important;
   }
 }
 .marquee--fast {
   .marquee__content {
-      animation-duration: 20s !important;
+    animation-duration: 20s !important;
   }
 }
 @keyframes marquee {
   0% {
-      transform: translateX(0%);
+    transform: translateX(0%);
   }
   100% {
-      transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 @keyframes marqueeboo {
   0% {
-      transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   100% {
-      transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 
@@ -139,8 +139,8 @@ address {
   position: relative;
 
   @media screen and (max-width: map-get($breakpoints, md)) {
-      max-width: base(9);
-      margin-top: 0;
+    max-width: base(9);
+    margin-top: 0;
   }
 }
 
@@ -150,20 +150,20 @@ address {
   display: inline-block;
   position: relative;
   &:before {
-      left: 0.5em;
+    left: 0.5em;
   }
   &:after {
-      left: 0.3em;
+    left: 0.3em;
   }
 
   &:after,
   &:before {
-      content: '';
-      position: absolute;
-      border: 1px solid currentColor;
-      height: 100%;
-      top: 0.2em;
-      transform: rotate(30deg);
+    content: '';
+    position: absolute;
+    border: 1px solid currentColor;
+    height: 100%;
+    top: 0.2em;
+    transform: rotate(30deg);
   }
 }
 
@@ -174,58 +174,58 @@ address {
   max-width: base(20);
 
   @media screen and (min-width: map-get($breakpoints, md)) {
-      max-width: base(26);
+    max-width: base(26);
   }
 
   p {
-      margin-bottom: base(0.5);
+    margin-bottom: base(0.5);
   }
   h3 {
-      margin: 0;
-      margin-bottom: base(1.5);
+    margin: 0;
+    margin-bottom: base(1.5);
   }
 
   &--reverse {
-      @media screen and (min-width: map-get($breakpoints, md)) {
-          .client-card__figure {
-              grid-row-start: 2;
-          }
-          .client-card__body {
-              grid-row-start: 1;
-              display: grid;
-              align-content: end;
-              padding-top: base(7.5);
-          }
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .client-card__figure {
+        grid-row-start: 2;
       }
+      .client-card__body {
+        grid-row-start: 1;
+        display: grid;
+        align-content: end;
+        padding-top: base(7.5);
+      }
+    }
   }
 
   &:not(.client-card--reverse) {
-      .client-card__body {
-          @media screen and (min-width: map-get($breakpoints, md)) {
-              padding-bottom: base(7.5);
-          }
+    .client-card__body {
+      @media screen and (min-width: map-get($breakpoints, md)) {
+        padding-bottom: base(7.5);
       }
+    }
   }
   &__figure {
-      position: relative;
-      width: 100%;
+    position: relative;
+    width: 100%;
   }
 
   &__background {
-      position: relative;
-      display: block;
-      width: 100%;
+    position: relative;
+    display: block;
+    width: 100%;
   }
 
   &__logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      max-width: 80%;
-      transform: translate(-50%, -50%);
-      max-width: clamp(#{base(5)}, 50%, #{base(15)});
-      max-height: base(10);
-      object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 80%;
+    transform: translate(-50%, -50%);
+    max-width: clamp(#{base(5)}, 50%, #{base(15)});
+    max-height: base(10);
+    object-fit: contain;
   }
 }
 
@@ -247,34 +247,34 @@ address {
   color: $color-primary;
   display: block;
   @media screen and (max-width: map-get($breakpoints, md)) {
-      font-size: base(2.5);
+    font-size: base(2.5);
   }
 
   &:not(:first-of-type) {
-      margin-top: 0.5em;
+    margin-top: 0.5em;
   }
   &:first-of-type {
-      text-indent: -150%;
-      color: $color-secondary-dark;
+    text-indent: -150%;
+    color: $color-secondary-dark;
   }
   &:last-of-type {
-      text-indent: -100%;
-      color: $color-primary-dark;
-      margin-bottom: 0.5em;
+    text-indent: -100%;
+    color: $color-primary-dark;
+    margin-bottom: 0.5em;
   }
 }
 
 .ingress {
   margin-top: base(15);
   @media screen and (max-width: map-get($breakpoints, sm)) {
-      margin-top: base(10);
+    margin-top: base(10);
   }
 }
 
 .header-text {
   margin-top: base(11);
   @media screen and (max-width: map-get($breakpoints, xl)) {
-      margin-top: base(5);
+    margin-top: base(5);
   }
 }
 
@@ -285,3 +285,4 @@ address {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+

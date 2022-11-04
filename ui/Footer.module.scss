@@ -1,5 +1,5 @@
 .footer {
-  color: white; // $color-secondary;
+  color: $color-secondary;
   position: relative;
 }
 
@@ -11,9 +11,9 @@
 }
 .footer__cta {
   margin-bottom: base(7.5);
-//   @media screen and (max-width: map-get($breakpoints, md )) {
-//     margin-bottom: base(3);
-//   }
+  @media screen and (max-width: map-get($breakpoints, md )) {
+    margin-bottom: base(3);
+  }
 }
 
 .footer__bottom {

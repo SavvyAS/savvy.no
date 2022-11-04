@@ -5,7 +5,8 @@ import { useRouter, usePathname } from 'next/navigation'
 import { Button } from './Button'
 import content from '@/lib/content.json'
 import { Globals } from '@/lib/content'
-// import './Footer.module.scss'
+import styles from './Footer.module.scss'
+import clsx from 'clsx'
 
 export const Footer = () => {
   const { footer } = content.globals as Globals
@@ -15,14 +16,14 @@ export const Footer = () => {
   const openSendMessageModal = () => {}
 
   const footerText =
-    pathname === '/agency' || pathname === 'contact'
+    pathname === '/agency' || pathname === '/contact'
       ? 'Want to be part of our team?'
       : 'Want to collaborate with us?'
 
   return (
-    <footer className="container footer">
-      <div className="row">
-        <div className="column footer__cta">
+    <footer className={clsx('container', styles.footer)}>
+      <div className={styles.row}>
+        <div className={clsx('column', styles.footer__cta)}>
           <h3 className="color-secondary">{footerText}</h3>
 
           {pathname === 'agency' ? (
@@ -36,18 +37,18 @@ export const Footer = () => {
       </div>
 
       <div className="row">
-        <div className="column footer__bottom">
-          <div className="footer__grid">
-            <address className="address">
+        <div className={clsx('column', styles.footer__bottom)}>
+          <div className={styles.footer__grid}>
+            <address className={styles.address}>
               <div>{footer.address}</div>
               <div>{footer.postal}</div>
               <div>
-                <a className="a color-white" href="mailto:hei@savvy.no">
+                <a className={clsx('color-white', styles.a)} href="mailto:hei@savvy.no">
                   {footer.email}
                 </a>
               </div>
             </address>
-            <nav className="links">
+            <nav className={styles.links}>
               <Link href="/clients" className="color-secondary">
                 Clients
               </Link>

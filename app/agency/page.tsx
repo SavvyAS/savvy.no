@@ -1,8 +1,8 @@
 import { Pages } from '@/lib/content'
-import { pages } from '@/lib/content.json'
+import content from '@/lib/content.json'
 
 export default function Page() {
-  const { agency } = pages as Pages
+  const { agency } = content.pages as Pages
   return (
     <div className="">
       <div className="">

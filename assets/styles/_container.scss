@@ -13,6 +13,9 @@
 
 .column-1 {
   grid-column: 2 / 24;
+  @media screen and (max-width: map-get($breakpoints, md )) {
+    grid-column: 1 / 25;
+}
 }
 
 .column-2 {

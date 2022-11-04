@@ -1,13 +1,15 @@
-import { Home } from '@/lib/content'
-import { pages } from '@/lib/content.json'
+import { Pages } from '@/lib/content'
+import content from '@/lib/content.json'
 import { AnimatedHeading } from '@/ui/AnimatedHeading'
 import { Button } from '@/ui/Button'
 import { HalfImage } from '@/ui/HalfImage'
+import { HorizontalScrollContainer } from '@/ui/HorizontalScrollContainer'
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Page() {
-  const home: Home = pages.home
+  const { home } = content.pages as Pages
   const competenceString = home.competence.map((x) => x + ' // ').join('')
 
   return (
@@ -100,36 +102,36 @@ export default function Page() {
       </section>
       <section>
         <h2 className="sr-only">Clients</h2>
-        {/* <HorizontalScrollContainer>
-                <div
-                    v-for="(client, index) in home.clients"
-                    :key="client.name"
-                    className="client-card"
-                    :className="{ 'client-card--reverse': index % 2 !== 0 }"
-                >
-                    <div className="client-card__figure">
-                        <Image
-                            className="client-card__background"
-                            format="webp"
-                            :src="client.backgroundPath"
-                            quality="100"
-                            width="520"
-                            height="660"
-                            alt=""
-                        />
-                        <img
-                            className="client-card__logo"
-                            loading="lazy"
-                            :src="client.logoPath"
-                            :alt="client.name + ' logo'"
-                        />
-                    </div>
-                    <div className="client-card__body">
-                        <p>Client</p>
-                        <span className="h3">{ client.name }</span>
-                    </div>
-                </div>
-            </HorizontalScrollContainer> */}
+        <HorizontalScrollContainer>
+          {home.clients.map((client, index) => (
+            <div
+              key={client.name}
+              className={clsx('client-card', index % 2 !== 0 && 'client-card--reverse')}
+            >
+              <div className="client-card__figure">
+                <Image
+                  className="client-card__background"
+                  src={client.backgroundPath}
+                  quality="100"
+                  width="520"
+                  height="660"
+                  alt={client.name}
+                />
+                <Image
+                  className="client-card__logo"
+                  src={client.logoPath}
+                  width="520"
+                  height="660"
+                  alt={client.name + ' logo'}
+                />
+              </div>
+              <div className="client-card__body">
+                <p>Client</p>
+                <span className="h3">{client.name}</span>
+              </div>
+            </div>
+          ))}
+        </HorizontalScrollContainer>
         <Image
           className="graffiti-2"
           src="/images/graffiti_2.svg"
