@@ -1,0 +1,114 @@
+@font-face {
+    font-family: Akkurat;
+    src: url('~/assets/fonts/akkurat-bold.ttf');
+    font-weight: bold;
+    font-display: swap;
+}
+@font-face {
+    font-family: Akkurat;
+    src: url('~/assets/fonts/akkurat.ttf');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Akkurat;
+    src: url('~/assets/fonts/akkurat-light.ttf');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Akkurat;
+    src: url('~/assets/fonts/akkurat-italic.ttf');
+    font-style: italic;
+    font-display: swap;
+}
+
+html,
+body {
+    font-family: Akkurat, Arial, Helvetica, sans-serif;
+    color: #fceafc;
+}
+
+h1,
+.h1 {
+    font-size: base(3.6);
+    // font-size: 72px;
+    line-height: base(3.8);
+    font-weight: normal;
+    color: $color-primary;
+    margin-bottom: 1rem;
+    display: block;
+    @media screen and (max-width: map_get($breakpoints, md)) {
+        font-size: base(2.5);
+    }
+}
+
+h2,
+.h2 {
+    font-size: base(2.4);
+    // font-size: 48px;
+    line-height: base(5.6);
+    color: $color-primary;
+    font-weight: normal;
+    margin-bottom: base(5);
+    display: block;
+}
+h3,
+.h3 {
+    font-size: base(2.1);
+    // font-size: 42px;
+    line-height: base(2.4);
+    color: $color-primary;
+    font-weight: normal;
+    margin-bottom: base(1.5);
+    display: block;
+}
+
+p {
+    font-size: base(1.1);
+    // font-size: 22px;
+    font-weight: normal;
+    line-height: base(1.7);
+    margin-bottom: base(1.5);
+    display: block;
+}
+
+.paragraph-small {
+    font-size: base();
+    line-height: base(1.2);
+    margin-bottom: base(1.5);
+}
+.paragraph-large {
+    // font-size: 32px;
+    font-size: base(1.6);
+    font-weight: 300;
+    line-height: base(2.4);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    &:focus-visible {
+        outline: 1px solid white;
+        outline-offset: base(0.5);
+    }
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+small {
+    font-size: base(0.9);
+    line-height: base(1.2);
+    margin-bottom: base(0.5);
+    display: block;
+}
+
+.smaller {
+    display: block;
+    font-size: base(0.8);
+    line-height: base(1.2);
+}

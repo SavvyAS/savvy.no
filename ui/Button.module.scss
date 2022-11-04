@@ -1,0 +1,72 @@
+
+.button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 1px solid $color-secondary;
+    outline-offset: base(0.5);
+  }
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    i {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &--arrow {
+    &:hover {
+      .button__icon i {
+        transform: translateX(5px);
+      }
+    }
+  }
+  &--plus {
+    &:hover {
+      .button__icon i {
+        transform: translateY(-5px);
+      }
+    }
+  }
+  &--large {
+    font-size: 72px;
+    font-weight: normal;
+    .button__icon {
+      font-size: 22px;
+      transform: translateY(-25px);
+    }
+
+    @media (max-width: 992px) {
+      .button__icon {
+        transform: translateY(-10px);
+      }
+      font-size: 42px;
+    }
+  }
+
+  &--small {
+    font-size: 16px;
+    .button__icon {
+      font-size: 22px;
+      transform: translateY(0px);
+    }
+  }
+
+  @each $color-name, $color in $colors {
+    &--#{$color-name} {
+      color: $color;
+    }
+  }
+}

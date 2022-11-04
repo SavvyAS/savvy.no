@@ -1,0 +1,48 @@
+$animationDuration: 0.7s;
+
+.animation-enter-active {
+  display: inline-block;
+  transform-origin: bottom;
+  animation: rotate-in 1s ease-out;
+  transform-style: preserve-3d;
+}
+.animation-leave-active {
+  display: inline-block;
+  transform-origin: bottom;
+  animation: rotate-out $animationDuration ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.perspective-container {
+  perspective: 300px;
+  // perspective-origin: 50% 50%;
+}
+
+@keyframes rotate-out {
+  0% {
+    transform: rotateX(0deg);
+  }
+  30% {
+    transform: rotateX(-25deg);
+  }
+  80% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+}
+@keyframes rotate-in {
+  0% {
+    transform: rotateX(-180deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}

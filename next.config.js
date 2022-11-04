@@ -3,9 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    // Required:
-    appDir: true,
+    appDir: true
   },
+  sassOptions: {
+    additionalData: `@import "assets/styles/variables.scss"; @import "assets/styles/mixins.scss";`
+  }
 }
 
 module.exports = nextConfig

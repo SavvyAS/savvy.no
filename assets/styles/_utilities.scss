@@ -1,0 +1,36 @@
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@each $color-name, $color in $colors {
+  .bg-#{$color-name} {
+    background-color: $color;
+  }
+  .border-color-#{$color-name} {
+    border-color: $color;
+  }
+  .color-#{$color-name} {
+    color: $color;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.vertical-align-center {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+  height: 100%;
+}

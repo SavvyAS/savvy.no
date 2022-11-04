@@ -1,0 +1,287 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $base-font-size;
+
+  @media screen and (max-width: map-get($breakpoints, md)) {
+    font-size: $base-font-size * 0.7;
+  }
+
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+
+  background: $color-background;
+  min-height: 100vh;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient($color-secondary-darker, $color-background);
+    height: 500px;
+  }
+}
+.content {
+  position: relative;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+section {
+  margin-top: base(10);
+  margin-bottom: base(10);
+  @media screen and (max-width: map-get($breakpoints, md)) {
+    margin-top: base(5);
+    margin-bottom: base(5);
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-wrapper > img {
+  min-width: base(22.5);
+}
+
+address {
+  font-style: normal;
+}
+
+.marquee {
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marquee__track {
+  height: 100%;
+  width: max-content;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.marquee__content {
+  width: max-content;
+  height: 100%;
+  font-size: base(3.6);
+  color: $color-secondary-dark;
+  animation: marquee 25s linear infinite;
+  padding: 0 10px;
+}
+
+.marquee--reverse {
+  .marquee__content {
+      animation: marqueeboo 15s linear infinite;
+  }
+}
+
+.marquee--primary {
+  .marquee__content {
+      color: $color-primary;
+  }
+}
+.marquee--primary-dark {
+  .marquee__content {
+      color: $color-primary-dark;
+  }
+}
+
+.marquee--slow {
+  .marquee__content {
+      animation-duration: 30s !important;
+  }
+}
+.marquee--fast {
+  .marquee__content {
+      animation-duration: 20s !important;
+  }
+}
+@keyframes marquee {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+@keyframes marqueeboo {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
+}
+
+.graffiti-2 {
+  max-width: base(19);
+  margin: auto;
+  margin-top: -#{base(9)};
+  position: relative;
+
+  @media screen and (max-width: map-get($breakpoints, md)) {
+      max-width: base(9);
+      margin-top: 0;
+  }
+}
+
+.double-slash {
+  height: 1em;
+  width: 0.75em;
+  display: inline-block;
+  position: relative;
+  &:before {
+      left: 0.5em;
+  }
+  &:after {
+      left: 0.3em;
+  }
+
+  &:after,
+  &:before {
+      content: '';
+      position: absolute;
+      border: 1px solid currentColor;
+      height: 100%;
+      top: 0.2em;
+      transform: rotate(30deg);
+  }
+}
+
+.client-card {
+  display: grid;
+  row-gap: base();
+
+  max-width: base(20);
+
+  @media screen and (min-width: map-get($breakpoints, md)) {
+      max-width: base(26);
+  }
+
+  p {
+      margin-bottom: base(0.5);
+  }
+  h3 {
+      margin: 0;
+      margin-bottom: base(1.5);
+  }
+
+  &--reverse {
+      @media screen and (min-width: map-get($breakpoints, md)) {
+          .client-card__figure {
+              grid-row-start: 2;
+          }
+          .client-card__body {
+              grid-row-start: 1;
+              display: grid;
+              align-content: end;
+              padding-top: base(7.5);
+          }
+      }
+  }
+
+  &:not(.client-card--reverse) {
+      .client-card__body {
+          @media screen and (min-width: map-get($breakpoints, md)) {
+              padding-bottom: base(7.5);
+          }
+      }
+  }
+  &__figure {
+      position: relative;
+      width: 100%;
+  }
+
+  &__background {
+      position: relative;
+      display: block;
+      width: 100%;
+  }
+
+  &__logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 80%;
+      transform: translate(-50%, -50%);
+      max-width: clamp(#{base(5)}, 50%, #{base(15)});
+      max-height: base(10);
+      object-fit: contain;
+  }
+}
+
+.overflow-text-container {
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.overflow-text-item {
+  white-space: nowrap;
+  margin: 0;
+  text-indent: -50%;
+  font-size: base(3.6);
+  color: $color-primary;
+  display: block;
+  @media screen and (max-width: map-get($breakpoints, md)) {
+      font-size: base(2.5);
+  }
+
+  &:not(:first-of-type) {
+      margin-top: 0.5em;
+  }
+  &:first-of-type {
+      text-indent: -150%;
+      color: $color-secondary-dark;
+  }
+  &:last-of-type {
+      text-indent: -100%;
+      color: $color-primary-dark;
+      margin-bottom: 0.5em;
+  }
+}
+
+.ingress {
+  margin-top: base(15);
+  @media screen and (max-width: map-get($breakpoints, sm)) {
+      margin-top: base(10);
+  }
+}
+
+.header-text {
+  margin-top: base(11);
+  @media screen and (max-width: map-get($breakpoints, xl)) {
+      margin-top: base(5);
+  }
+}
+
+.graffiti-1 {
+  position: absolute;
+  max-width: clamp(#{base(7)}, 40%, #{base(20)});
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

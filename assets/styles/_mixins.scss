@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+@function base($multiplier: 1) {
+    @return math.div($baseline-px, $base-font-size) * $multiplier * 1rem;
+}
+
+@mixin container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: base();
+    padding-right: base();
+
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        max-width: 100%;
+    }
+    @media screen and (min-width: map-get($breakpoints, sm)) and (max-width: map-get($breakpoints, md)) {
+        max-width: 100%;
+    }
+    @media screen and (min-width: map-get($breakpoints, md)) and (max-width: map-get($breakpoints, lg)) {
+        max-width: 100%;
+    }
+    @media screen and (min-width: map-get($breakpoints, lg)) and (max-width: map-get($breakpoints, xl)) {
+        max-width: 960px;
+    }
+    @media screen and (min-width: map-get($breakpoints, xl)) and (max-width: map-get($breakpoints, xxl)) {
+        max-width: 1140px;
+    }
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+        max-width: 1320px;
+    }
+}
