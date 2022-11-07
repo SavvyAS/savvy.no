@@ -8,6 +8,7 @@ interface Props extends React.PropsWithChildren {
   type?: 'arrow' | 'plus'
   size?: 'small' | 'medium' | 'large'
   color?: string
+  marginBottom?: boolean
   onClick?: () => void
 }
 
@@ -15,6 +16,7 @@ export const Button = ({
   type = 'arrow',
   size = 'medium',
   color = 'primary',
+  marginBottom = false,
   children,
   onClick
 }: Props) => {
@@ -22,7 +24,8 @@ export const Button = ({
     styles['button'],
     type === 'arrow' ? styles['button--arrow'] : styles['button--plus'],
     size === 'small' ? styles['button--small'] : size === 'large' ? styles['button--large'] : '',
-    styles[`button--${color}`]
+    styles[`button--${color}`],
+    marginBottom ? styles['button--mb-l'] : ''
   )
 
   return (
