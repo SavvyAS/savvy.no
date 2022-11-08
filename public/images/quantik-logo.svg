@@ -1,0 +1,36 @@
+<svg width="1664" height="452" xmlns="http://www.w3.org/2000/svg" fill="none">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <g>
+   <g clip-path="url(#svg_1)">
+    <circle stroke-width="50" stroke="white" r="125" cy="214.70265" cx="423"/>
+    <path stroke-width="44" stroke="white" d="m985,256.20265c0,47.573 -36.703,84.5 -80,84.5c-43.297,0 -80,-36.927 -80,-84.5c0,-47.573 36.703,-84.5 80,-84.5c43.297,0 80,36.927 80,84.5z"/>
+    <rect transform="rotate(45 460.111 318.578)" fill="white" height="43.999" width="143.695" y="318.57765" x="460.111"/>
+    <rect transform="rotate(-90 968 354.703)" fill="white" height="45" width="198" y="354.70265" x="968"/>
+    <rect transform="rotate(-90 1051 354.703)" fill="white" height="45" width="198" y="354.70265" x="1051"/>
+    <rect transform="rotate(-90 1179 354.703)" fill="white" height="45" width="148" y="354.70265" x="1179"/>
+    <rect transform="rotate(-90 1283 355.703)" fill="white" height="45" width="252" y="355.70265" x="1283"/>
+    <rect fill="white" height="45" width="132" y="156.70265" x="1240"/>
+    <rect transform="rotate(-90 1400 354.703)" fill="white" height="45" width="198" y="354.70265" x="1400"/>
+    <rect transform="rotate(-90 1483 354.703)" fill="white" height="45" width="312" y="354.70265" x="1483"/>
+    <circle fill="white" r="22.5" cy="85.20265" cx="1422.5"/>
+    <path fill="white" d="m649,156.70265l-46,0l0,133.5c13.981,99.408 157.599,99.419 171.5,0l0,-133.5l-45,0l0,133.5l-4.95,8.924c-14.812,26.7 -52.871,27.629 -68.968,1.684l-6.582,-10.608l0,-133.5z"/>
+    <path fill="white" d="m1599.5,160.70265l-71.5,71.5l0,-179.5l-45,0l0,302l45,0l0,-91l91,91l45,0l0,-18.5l-88,-88.5l87,-87l-63.5,0z"/>
+    <path fill="white" d="m1224,208.70265l-45,0c-22.07,-20.372 -56.049,-20.501 -78.273,-0.298l-4.727,4.298l0,-38c11.973,-12.944 28.007,-21.413 45.448,-24.0058l2.462,-0.366c5.044,-0.7498 10.156,-0.9335 15.241,-0.5478l11.004,0.8348c30.375,2.3038 53.845,27.6228 53.845,58.0848z"/>
+   </g>
+   <defs transform="translate(-110.5 -133) translate(5 -22) translate(-39 24) translate(181 -1) translate(83 14) translate(-175 -1) translate(149 63) translate(72 10) translate(89.5 0) translate(0 98.7027)">
+    <clipPath id="svg_1">
+     <rect x="255" y="52.70265" fill="white" height="360" width="1409"/>
+    </clipPath>
+   </defs>
+  </g>
+  <g>
+   <rect y="0" fill="white" rx="28" height="56" width="143" x="47"/>
+   <rect fill="white" rx="28" height="56" width="143" y="198" x="47"/>
+   <rect fill="white" rx="28" height="56" width="143" y="396" x="47"/>
+   <rect x="0" fill="white" rx="28" height="56" width="238" y="297"/>
+   <rect x="0" fill="white" rx="28" height="56" width="238" y="99"/>
+  </g>
+ </g>
+
+</svg>

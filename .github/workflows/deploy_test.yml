@@ -1,0 +1,24 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build
+        run: |
+          yarn
+          yarn build:static
+      - name: deploy changes to a repo
+        uses: tagus/git-deploy@v0.1
+        with:
+          changes: out
+          repository: git@github.com:SavvyAS/testsavvyas.github.io.git
+          ssh_key: ${{ secrets.CI_KEY }}
+          name: kwrl
+          email: hakon@savvy.no
