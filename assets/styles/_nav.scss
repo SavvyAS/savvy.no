@@ -3,7 +3,6 @@
     display: grid;
     place-items: center;
     .link-body {
-        visibility: hidden;
         position: absolute;
         width: base(7);
         top: 50%;
@@ -12,18 +11,9 @@
         z-index: 1;
     }
 
-    a.nuxt-link-active ~ .link-body {
-        visibility: visible;
-    }
     a {
         position: relative;
         z-index: 2;
-    }
-
-    a:not(.nuxt-link-active) {
-        &:hover {
-            color: $color-primary;
-        }
     }
 }
 

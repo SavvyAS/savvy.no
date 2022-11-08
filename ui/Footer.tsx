@@ -17,8 +17,8 @@ export const Footer = () => {
 
   const footerText =
     pathname === '/agency' || pathname === '/contact'
-      ? 'Want to be part of our team?'
-      : 'Want to collaborate with us?'
+      ? 'Vil du bli bedre kjent med oss?'
+      : 'Vil du samarbeide med oss?'
 
   return (
     <footer className={clsx('container', styles.footer)}>
@@ -27,10 +27,10 @@ export const Footer = () => {
           <h3 className="color-secondary">{footerText}</h3>
 
           {pathname === 'agency' ? (
-            <Button onClick={openUploadCVModal}>Send your CV</Button>
+            <Button onClick={openUploadCVModal}>Send din CV</Button>
           ) : (
             <Button v-else onClick={openSendMessageModal}>
-              Contact us
+              Send oss en melding
             </Button>
           )}
         </div>
@@ -50,17 +50,17 @@ export const Footer = () => {
             </address>
             <nav className={styles.links}>
               <Link href="/clients" className="color-secondary">
-                Clients
+                Kunder
               </Link>
               <Link
                 href="/agency"
                 className="color-secondary"
                 onClick={() => router.push('/about')}
               >
-                Agency
+                Selskapet
               </Link>
               <Link href="/contact" className="color-secondary">
-                Contact
+                Kontakt oss
               </Link>
             </nav>
           </div>

@@ -1,20 +1,15 @@
 { 
     "pages": {
         "home": {
-            "metaTitle": "Savvy | Home",
-            "metaDescription": "Welcome to savvy!",
-            "heading": "We are Savvy.",
-            "ingress": "Savvy is a new consulting firm with a clear vision. We have built this company from the ground up to make sure that our consultants are competent, ambitious, and happy. We do not believe in bread and circus, we believe in transparency, equality, and adventure.",
+            "metaTitle": "Savvy | Hjem",
+            "metaDescription": "Velkommen til Savvy!",
+            "heading": "Vi er Savvy.",
+            "ingress": "Vi er Savvy, seniorutviklere som er håndplukket gjennom relasjoner, der alle eier en bit av selskapet. Vi har tung kompetanse, kombinert med en klar røst. Vi skriver ikke bare kode, vi bidrar med kompetanse og tydelige meninger i prosjektene vi jobber på. ",
             "clients": [
                 {
                     "logoPath": "/images/vipps.svg",
                     "backgroundPath": "/images/client-background-1.svg",
                     "name": "BankID"
-                },
-                {
-                    "logoPath": "/images/fdir.svg",
-                    "backgroundPath": "/images/client-background-2.svg",
-                    "name": "Fiskeridirektoratet"
                 },
                 {
                     "logoPath": "/images/fjordtours.svg",
@@ -50,80 +45,87 @@
             ]
         },
         "clients": {
-            "metaTitle": "Savvy | Clients",
-            "metaDescription": "These are our clients!",
-            "heading": "Our clients",
-            "ingress": "We are proud of our clients and the work we have done for them. Due to the quality of our consultants we have had high profile clients from day one of our journey.",
+            "metaTitle": "Savvy | Kunder",
+            "metaDescription": "Dette er kundene våre!",
+            "heading": "Våre kunder",
+            "ingress": "Vi er stolte av kundene våre og verdien de tilfører samfunnet. Kundene våre spenner fra små til store selskaper, fra reiselivsnæringen til finans.",
             "clients": [
                 {
-                    "logoPath": "/images/vipps.svg",
+                    "logoPath": "/images/bankid.svg",
                     "backgroundPath": "/images/client-background-1-wide.svg",
-                    "name": "BankID",
-                    "text": "BankID is Norways most preferred solution for ID services, trusted by public services, banks, insurance, among many others. Savvy is contributing to the next generation of the BankID solutions.",
+                    "name": "BankID BankAxept",
+                    "text": "BankID er Norges foretrukne løsning for ID-tjenester, benyttet av offentlige tjenester, banker, forsikringselskaper og mange flere. Savvy bidrar i arbeidet med neste generasjon av BankID sine tjenester.",
                     "websiteUrl": "https://bankid.no"
                 },
                 {
                     "logoPath": "/images/adventure_tech_logo.svg",
                     "backgroundPath": "/images/client-background-4.svg",
                     "name": "Adventure Tech",
-                    "text": "Adventure Tech is a Norwegian tech company providing software for the adventure travel business.",
+                    "text": "Adventure Tech er et norsk teknologiselskap som leverer IT-løsninger til reiselivsbransjen.",
                     "websiteUrl": "https://adventuretech.no/"
                 },
                 {
                     "logoPath": "/images/fjordtours.svg",
                     "backgroundPath": "/images/client-background-2-wide.svg",
                     "name": "Fjord Tours",
-                    "text": "Fjord Tours, founded in 1982, offers package tours, activities and hotels throughout Norway on both the Norwegian and international market. Savvy is aiding development of their core platform.",
+                    "text": "Fjord Tours AS er en sentral aktør i norsk reiseliv og tilbyr en rekke produkter i Norge. Fjord Tours er en distributør for en rekke andre aktører og har sterk tilknytning til aktører som Tide og Vy. Kjernen av deres virksomhet er salg av pakketurer i Norge, hvor deres mest kjente produkt er Norway in a Nutshell.",
                     "websiteUrl": "https://fjordtours.com"
                 }, 
-                {
-                    "logoPath": "/images/fdir.svg",
-                    "backgroundPath": "/images/client-background-2.svg",
-                    "name": "Fiskeridirektoratet",
-                    "text": "The Directorate of Fisheries is a branch of the Norwegian government that is responsible for managing Norway's marine resources. Savvy has been a part of a team that's been developing a new system for managing fishing quotas.",
-                    "websiteUrl": "https://fiskeridir.no"
-                },
                 {
                     "logoPath": "/images/Sbanken_logo.svg",
                     "backgroundPath": "/images/Sbanken_bakgrunn.png",
                     "name": "Sbanken",
-                    "text": "Sbanken is a bank with their main offices in Bergen, and is Norways first pure online bank. Savvy is a part of a team developing the next generation of online banking solutions.",
+                    "text": "Sbanken er en bank med hovedkontor i Bergen, og er Norges første rene nettbank. Savvy er en del av et team som utvikler neste generasjons nettbank.",
                     "websiteUrl": "https://sbanken.no"
                 },  
                 {
                     "logoPath": "/images/imove_logo.svg",
                     "backgroundPath": "/images/imove_bakgrunn.png",
                     "name": "imove",
-                    "text": "Imove is a new and innovative electric car subscription service, and often gets compared to Spotify for music and Netflix for film. Savvy is contributing to their core platform.",
+                    "text": "Imove er en ny og innovativ abonnementstjeneste for elbil som ofte blir sammenlignet med Spotify for musikk og Netflix for film. Savvy bidrar til utviklingen av deres kjerneplattform.",
                     "websiteUrl": "https://imove.no"
+                },
+                {
+                    "logoPath": "/images/quantik-logo.svg",
+                    "backgroundPath": "/images/client-background-2.svg",
+                    "name": "Quantik",
+                    "text": "Quantik er et FinTech-selskap som søker å forenkle alle bedrifters hverdag. Selskapet utfordrer den tradisjonelle måten å håndtere arbeidsflyten rundt inngåelse, signering og oppfølging av avtaler og kontrakter.",
+                    "websiteUrl": "https://quantik.app"
+                },
+                {
+                    "logoPath": "/images/fdir.svg",
+                    "backgroundPath": "/images/client-background-2.svg",
+                    "name": "Fiskeridirektoratet",
+                    "text": "Fiskeridirektoratet er myndighetenes fremste rådgivende og utøvende organ innen fiskeriforvaltningen i Norge. Direktoratets hovedoppgave er planmessig å arbeide for at norsk fiskeri- og havbruksnæring fremmes og utvikles til beste for dem som arbeider i næringen og slik at fiskeressursene på lang sikt gir et optimalt utbytte.",
+                    "websiteUrl": "https://fiskeridir.no"
                 }
             ]
         },
         "agency": {
-            "metaTitle": "Savvy | Agency",
-            "metaDescription": "This is our agency!",
-            "heading": "We are savvy people",
-            "ingress": "Savvy was founded by experienced consultants from the software industry in an attempt at creating a company that empowers its employees.",
+            "metaTitle": "Savvy | Selskapet",
+            "metaDescription": "Vi er Savvy!",
+            "heading": "Vi er Savvy",
+            "ingress": "Savvy ble grunnlagt av erfarne konsulenter fra IT-bransjen med en ambisjon om å lage et selskap som åpent og pålitelig. Alle som jobber i Savvy er også medeiere i selskapet. Dette fordi vi vet at dyktige konsulenter som har eierskap til arbeidsplassen gir det lille ekstra for at våre kunder skal lykkes.",
             "text": "",
             "guilty": {
-                "heading": "Savvy & guilty",
-                "text": "Together with our friends and fellows in Guilty, we’ve gathered a heavy and experienced group of people. We like to call us a big savvy family, guilty of great talents.",
+                "heading": "Savvy & Guilty",
+                "text": "Sammen med vårt søsterselskap er vi et kompetansehus med 25 spesialister innen design, teknologi og forretningsutvikling.",
                 "webpageUrl": "http://guilty.no"
             },
             "list": {
-                "heading": "Whats's important to us;",
+                "heading": "Det vi brenner for;",
                 "items": [
                     {
-                        "name": "Transparency",
-                        "modalContent": "We do not believe in making deals behind closed doors. All of our employees have full access to information about how the company is run. They have access to every single contract between Savvy AS and any other party, and that includes each other's employment contracts. We do not make deals that we can not justify to our employees."
+                        "name": "Modig",
+                        "modalContent": "Vi er kompetente utviklere. For at kundene våre skal få maksimalt utbytte av kompetansen vi innehar så trenger de at vi deler den. Vi rir ikke kjepphester, men vi går ikke ut av et møte uten å ha delt meningene våre."
                     },
                     {
-                        "name": "Equality",
-                        "modalContent": "We do not want to, nor do we have to differentiate between our employees. All of our consultants have the same lucrative conditions in their contract of employment and they are all shareholders."
+                        "name": "Åpen",
+                        "modalContent": "Vi mener at den beste måten å sørge for at alt vi gjør tåler dagens lys er å konstant oppholde seg i dagens lys. Alle våre ansatte har full innsikt i avtalene selskapet inngår og retningen selskapet tar. Beslutningene vi tar står vi inne for, sammen."
                     },
                     {
-                        "name": "Adventurous",
-                        "modalContent": "We want to go on an adventure and we want you to come along. We believe we are building a company that represents something new and exciting, and we want to help our clients do the same."
+                        "name": "Stolt",
+                        "modalContent": "Vi er stolt av den faglige kompetansen vår og arbeidet vi leverer. Hver og en av oss er stolt av egne ferdigheter så vel som kollegaene våre."
                     }
                 ]
             },
@@ -131,72 +133,79 @@
                 {
                     "imagePath": "/images/people/hakon.png",
                     "name": "Håkon Gimnes Kaurel",
-                    "title": "CEO / Consultant",
-                    "about": "Håkon is a full stack developer with a broad set of skills. He is comfortable working on just about any platform and has multiple years of experience working with both Java and .NET. Above all else Håkon considers himself a pragmatic software developer who will work hard to make sure that his work generates value for his clients.",
+                    "title": "Daglig leder / Konsulent",
+                    "about": "Håkon er en fullstack-utvikler med et bredt sett av ferdigheter. Han er komfortabel med å jobbe på omtrent hvilken som helst plattform og har flere års erfaring med å jobbe med både Java og .NET. Fremfor alt ser Håkon på seg selv som en pragmatisk programvareutvikler som vil jobbe hardt for å sikre at arbeidet hans genererer verdi for kundene sine.",
                     "email": "hakon@savvy.no"
                 },
                 {
                     "imagePath": "/images/people/joachim.png",
                     "name": "Joachim Carlsen",
-                    "title": "Consultant",
-                    "about": "Joachim is a developer with multiple years of experiece working with well known brands such as Vipps, TV2 and Altibox. During his career Joachim has worked with multiple technologies and has built solid competence on the Java platform and as an iOS developer.",
+                    "title": "Konsulent",
+                    "about": "Joachim er en utvikler med flere års erfaring fra å jobbe med kjente merkevarer som Vipps, TV2 og Altibox. I løpet av sin karriere har Joachim jobbet med flere teknologier og har bygget solid kompetanse på Java-plattformen og som iOS-utvikler.",
                     "email": "joachim@savvy.no"
                 },
                 {
                     "imagePath": "/images/people/erlend.png",
                     "name": "Erlend Rekve",
-                    "title": "Consultant",
-                    "about": "Erlend is a full stack developer with a master’s degree in computer science. He has several years of experience working with complex systems primarily on the .NET platform. He is known by his colleagues for being a thorough and innovative developer.",
+                    "title": "Konsulent",
+                    "about": "Erlend er full stack-utvikler med en mastergrad i informatikk. Han har flere års erfaring med å jobbe med komplekse systemer primært på .NET-plattformen. Han er kjent av sine kolleger for å være en grundig og innovativ utvikler.",
                     "email": "erlend@savvy.no"
                 },
                 {
                     "imagePath": "/images/people/abdullah.png",
                     "name": "Abdullah Shaheen",
-                    "title": "Consultant",
-                    "about": "Abdullah is a developer with experience from working with large and complex systems. He has experience from working on the .NET platform as well as several different frontend technologies.",
+                    "title": "Konsulent",
+                    "about": "Abdullah er en utvikler med erfaring fra arbeid med store og komplekse systemer. Han har erfaring fra arbeid på .NET-plattformen samt flere ulike frontend-teknologier.",
                     "email": "abdullah@savvy.no"
                 },
                 {
                     "imagePath": "/images/people/trandal.png",
                     "name": "Håkon Trandal",
-                    "title": "Consultant",
-                    "about": "Håkon is a full stack developer with 9 years of .NET experience. He has worked on everything from small websites to computer games and large enterprise systems. Håkon works well in teams and is well respected for his ability to explain concepts.",
+                    "title": "Konsulent",
+                    "about": "Håkon er en fullstack-utvikler med 8 års .NET-erfaring. Han har jobbet med alt fra små nettsider til dataspill og store bedriftssystemer. Håkon jobber godt i team og er godt respektert for sin evne til å forklare begreper.",
                     "email": "hakon.trandal@savvy.no"
                 },
                 {
                     "imagePath": "/images/people/sindre.png",
                     "name": "Sindre Møgster Braaten",
-                    "title": "Consultant",
+                    "title": "Konsulent",
                     "email": "sindre@savvy.no",
-                    "about": "Sindre is a system developer who enjoys working with the backend as well as working with the frontend, during the development of systems. He has always had a fascination for finding out how systems actually work, regardless of whether it concerns how to efficiently perform heavy operations on a server, or how a user interface should behave as smoothly as possible."
+                    "about": "Sindre er en systemutvikler som trives like godt med å jobbe med backend, som å jobbe med frontend, under utvikling av systemer. Han har alltid hatt en fasinasjon for å finne ut hvordan systemer faktisk virker, uavhengig av om det gjelder hvordan effektivt gjør tunge operasjoner på en server, eller et brukergrensesnitt skal oppføre seg så smidig som mulig."
                 },
                 {
                     "imagePath": "/images/header-image-1.png",
                     "name": "Ole Eskild Steensen",
-                    "title": "Consultant",
+                    "title": "Konsulent",
                     "email": "ole@savvy.no",
-                    "about": "Ole Eskild has experience with a number of technologies and methodologies and has worked with everything from API services and cloud infrastructure to complex frontend applications. He thrives with ownership of the entire technology stack, but also likes to brush up on pure backend or frontend projects."
+                    "about": "Ole Eskild har erfaring med en rekke teknologier og metodikker og har jobbet med alt fra API-tjenester og sky-infrastuktur til komplekse frontend applikasjoner. Han trives best med eierskap til hele teknologi-stacken, men liker også å bryne seg på rene backend eller frontend prosjekter. "
                 },
                 {
                     "imagePath": "/images/people/asbjorn.png",
                     "name": "Asbjørn Rekve",
-                    "title": "Consultant",
+                    "title": "Konsulent",
                     "email": "asbjorn@savvy.no",
-                    "about": "Asbjørn is a versatile developer with broad experience in the development of web solutions. Through projects at Sbanken, the Norwegian Armed Forces, Equinor, and previously as CTO for Powerzeek, he has faced challenging tasks and is used to a great deal of responsibility. He has experience of working both independently and in collaboration with others."
+                    "about": "Asbjørn er en allsidig utvikler med bred kompetanse innen utvikling av webløsninger. Gjennom prosjekter hos Guilty, Sbanken, Forsvaret, Equinor, og tidligere som CTO for Powerzeek, har han hatt utfordrende arbeidsoppgaver og er vant med stort ansvar. Han har erfaring med å jobbe både selvstendig og sammen med andre, og har spesielt god erfaring fra autonome team."
                 },
                 {
                     "imagePath": "/images/header-image-1.png",
-                    "name": "New employee",
-                    "title": "Consultant",
+                    "name": "Ny ansatt",
+                    "title": "Konsulent",
                     "email": "",
-                    "about": "We have a new employee starting in February of 2023!"
+                    "about": "Vi får en ny ansatt i januar!"
+                },
+                {
+                    "imagePath": "/images/header-image-1.png",
+                    "name": "Ny ansatt",
+                    "title": "Konsulent",
+                    "email": "",
+                    "about": "Vi får en ny ansatt i februar!"
                 }
             ]
         },
         "contact": {
-            "metaTitle": "Savvy | Contact us",
-            "metaDescription": "Contact us now please",
-            "text": "We are always looking for new opportunities. Do not hesitate to contact us if you are in need of a Savvy consultant, or want to work with us in any other way."
+            "metaTitle": "Savvy | Kontakt oss",
+            "metaDescription": "Kontakt oss",
+            "text": "Vi er alltid åpen for nye muligheter og samarbeid. Ikke nøl med å kontakte oss dersom du har behov for en Savvy konsulent, eller ønsker å samarbeide med oss på andre måter."
         }
     },
     "globals": {

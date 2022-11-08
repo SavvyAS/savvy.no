@@ -87,7 +87,7 @@ export default function Page() {
             <li className="row" key={coreValue.name}>
               <div className="column-4">
                 <Button
-                  button-type="plus"
+                  type="plus"
                   size="large"
                   color={getColor(index)}
                   onClick={() => dynamic(coreValue.modalContent, getColor(index))}
@@ -103,7 +103,7 @@ export default function Page() {
       <section className="employees">
         <h2 className="sr-only">Employees</h2>
         {agency.team.map((employee, index) => (
-          <div className="row employees__row" key={employee.name}>
+          <div className="row employees__row" key={employee.name + index}>
             <div className={index % 2 === 0 ? 'column' : 'column-2'}>
               <Card
                 alignRight={index % 2 !== 0}
