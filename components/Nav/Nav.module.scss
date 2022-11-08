@@ -15,6 +15,12 @@
     position: relative;
     z-index: 2;
   }
+
+  .hover-highlight {
+    :hover {
+      color: $color-primary;
+    }
+  }
 }
 
 .navbar {

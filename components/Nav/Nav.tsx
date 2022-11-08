@@ -37,7 +37,7 @@ export const Nav = () => {
                 const isActive = item.slug === router.pathname
                 return (
                   <div key={item.slug} className={styles['link-wrapper']}>
-                    <Link href={item.slug}>
+                    <Link href={item.slug} className={isActive ? '' : styles['hover-highlight']}>
                       <span>{item.name}</span>
                     </Link>
                     {isActive && (
