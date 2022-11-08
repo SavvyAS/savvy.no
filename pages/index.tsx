@@ -1,14 +1,14 @@
-import { Pages } from '@/lib/content'
+import { Pages } from '@/lib/content.interface'
 import content from '@/lib/content.json'
-import { AnimatedHeading } from '@/ui/AnimatedHeading'
-import { Button } from '@/ui/Button'
-import { HalfImage } from '@/ui/HalfImage'
-import { HorizontalScrollContainer } from '@/ui/HorizontalScrollContainer'
-import clsx from 'clsx'
 import Image from 'next/image'
+import clsx from 'clsx'
+import { AnimatedHeading } from 'components/AnimatedHeading/AnimatedHeading'
 import Link from 'next/link'
+import { Button } from 'components/Button/Button'
+import { HalfImage } from 'components/HalfImage/HalfImage'
+import { HorizontalScrollContainer } from 'components/HorizontalScrollContainer/HorizontalScrollContainer'
 
-export default function Page() {
+export default function Index() {
   const { home } = content.pages as Pages
   const competenceString = home.competence.map((x) => x + ' // ').join('')
 
@@ -101,7 +101,7 @@ export default function Page() {
         </HalfImage>
       </section>
       <section>
-        <h2 className="sr-only">Clients</h2>
+        <h2 className="sr-only">Kunder</h2>
         <HorizontalScrollContainer>
           {home.clients.map((client, index) => (
             <div
@@ -126,7 +126,7 @@ export default function Page() {
                 />
               </div>
               <div className="client-card__body">
-                <p>Client</p>
+                <p>Kunde</p>
                 <span className="h3">{client.name}</span>
               </div>
             </div>

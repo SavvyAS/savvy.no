@@ -1,7 +1,3 @@
-'use client'
-
-import styles from './HalfImage.module.scss'
-
 export const HalfImage = ({ image, children }: any) => {
   return (
     <div className="container">

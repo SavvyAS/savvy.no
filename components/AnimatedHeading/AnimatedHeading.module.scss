@@ -1,0 +1,40 @@
+.perspective-container {
+  perspective: 300px;
+  white-space: nowrap;
+}
+
+.animation-enter-leave {
+  display: inline-block;
+  transform-origin: bottom;
+  animation: rotate-in-out 3s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotate-in-out {
+  0% {
+    transform: rotateX(-180deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  30% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  85% {
+    transform: rotateX(-25deg);
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+}

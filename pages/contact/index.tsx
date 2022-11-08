@@ -1,8 +1,8 @@
-import { Contact, FooterContent } from '@/lib/content'
+import { Contact, FooterContent } from '@/lib/content.interface'
 import content from '@/lib/content.json'
 import clsx from 'clsx'
 import Image from 'next/image'
-import styles from './page.module.scss'
+import styles from './index.module.scss'
 
 export default function Page() {
   const contact = content.pages.contact as Contact

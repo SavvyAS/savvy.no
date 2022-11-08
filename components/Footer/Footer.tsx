@@ -1,10 +1,8 @@
-'use client'
-
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
-import { Button } from './Button'
+import { Button } from '../Button/Button'
 import content from '@/lib/content.json'
-import { Globals } from '@/lib/content'
+import { Globals } from '@/lib/content.interface'
 import styles from './Footer.module.scss'
 import clsx from 'clsx'
 

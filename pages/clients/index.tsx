@@ -1,12 +1,10 @@
-'use client'
-
-import { Clients } from '@/lib/content'
+import { Clients } from '@/lib/content.interface'
 import content from '@/lib/content.json'
-import { Button } from '@/ui/Button'
-import { Card } from '@/ui/Card'
 import clsx from 'clsx'
+import { Button } from 'components/Button/Button'
+import { Card } from 'components/Card/Card'
 import Image from 'next/image'
-import styles from './page.module.scss'
+import styles from './index.module.scss'
 
 export default function Page() {
   const clientPage = content.pages.clients as Clients
@@ -22,7 +20,7 @@ export default function Page() {
         </div>
       </header>
       <section className={styles['clients-list']}>
-        <h2 className="sr-only">Clients</h2>
+        <h2 className="sr-only">Kunder</h2>
         {clientPage.clients.map((client, index) => (
           <div className={clsx(styles['clients-list__client'], 'row')} key={client.name}>
             <div className={index % 2 === 0 ? 'column' : 'column-2'}>
@@ -50,14 +48,14 @@ export default function Page() {
                 }
               >
                 <div className="vertical-align-center">
-                  <small style={{ display: 'block' }}>Client</small>
+                  <small style={{ display: 'block' }}>Kunde</small>
 
                   <span className="h3">{client.name}</span>
 
                   <p>{client.text}</p>
 
                   <a href={client.websiteUrl}>
-                    <Button>Visit {client.name}</Button>
+                    <Button>Besøk {client.name}</Button>
                   </a>
                 </div>
               </Card>

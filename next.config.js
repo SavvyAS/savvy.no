@@ -2,13 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true
-  },
   sassOptions: {
     additionalData: `
-      @import "assets/styles/variables.scss"; 
-      @import "assets/styles/mixins.scss";
+      @import "styles/variables.scss"; 
+      @import "styles/mixins.scss";
     `
   }
 }

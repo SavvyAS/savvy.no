@@ -1,10 +1,10 @@
-'use client'
-
 import content from '@/lib/content.json'
-import { Pages } from '@/lib/content'
-import { Button } from '@/ui/Button'
-import { Card } from '@/ui/Card'
+import { Pages } from '@/lib/content.interface'
 import Image from 'next/image'
+import styles from './index.module.scss'
+import clsx from 'clsx'
+import { Button } from 'components/Button/Button'
+import { Card } from 'components/Card/Card'
 
 export default function Page() {
   const { agency } = content.pages as Pages
@@ -31,10 +31,10 @@ export default function Page() {
   }
 
   return (
-    <div className="agency container">
+    <div className={clsx(styles.agency, 'container')}>
       <header>
         <div className="row">
-          <h1 className="column-4 agency__heading">{agency.heading}</h1>
+          <h1 className={clsx(styles.agency__heading, 'column-4')}>{agency.heading}</h1>
         </div>
         <div className="row">
           <p className="column-2 paragraph-large">{agency.ingress}</p>
@@ -42,7 +42,7 @@ export default function Page() {
       </header>
       <div className="row">
         <Image
-          className="column graffiti-top"
+          className={clsx(styles['graffiti-top'], 'column')}
           src="/images/graffiti.svg"
           quality="100"
           width="413"
@@ -57,7 +57,7 @@ export default function Page() {
         <div className="column">
           <Card
             image={
-              <div className="card-image-wrapper">
+              <div className={styles['card-image-wrapper']}>
                 <Image
                   src="/images/purple-room.png"
                   alt=""
@@ -71,8 +71,8 @@ export default function Page() {
             <div className="vertical-align-center">
               <span className="h3">{agency.guilty.heading}</span>
               <p>{agency.guilty.text}</p>
-              <a href="agency.guilty.webpageUrl" style={{ width: 'auto' }}>
-                <Button>Visit Guilty</Button>
+              <a href={agency.guilty.webpageUrl} style={{ width: 'auto' }}>
+                <Button>Besøk Guilty</Button>
               </a>
             </div>
           </Card>
@@ -82,9 +82,9 @@ export default function Page() {
         <div className="row">
           <h2 className="column color-secondary">{agency.list.heading}</h2>
         </div>
-        <ul>
+        <ul className={styles.ul}>
           {agency.list.items.map((coreValue, index) => (
-            <li className="row" key={coreValue.name}>
+            <li className={clsx('row', 'ul')} key={coreValue.name}>
               <div className="column-4">
                 <Button
                   type="plus"
@@ -100,15 +100,15 @@ export default function Page() {
           ))}
         </ul>
       </section>
-      <section className="employees">
+      <section className={styles.employees}>
         <h2 className="sr-only">Employees</h2>
         {agency.team.map((employee, index) => (
-          <div className="row employees__row" key={employee.name + index}>
+          <div className={clsx('row', styles.employees__row)} key={employee.name + index}>
             <div className={index % 2 === 0 ? 'column' : 'column-2'}>
               <Card
                 alignRight={index % 2 !== 0}
                 image={
-                  <div className="card-image-wrapper">
+                  <div className={styles['card-image-wrapper']}>
                     <Image
                       src={employee.imagePath}
                       alt=""
@@ -118,7 +118,7 @@ export default function Page() {
                       sizes="sm:400px md:100% lg:800px"
                     />
                     {index === 1 && (
-                      <div className="graffiti">
+                      <div className={styles.graffiti}>
                         <Image
                           src="/images/graffiti_2.svg"
                           width="379"
@@ -129,7 +129,7 @@ export default function Page() {
                       </div>
                     )}
                     {index === 3 && (
-                      <div className="graffiti">
+                      <div className={styles.graffiti}>
                         <Image
                           src="/images/graffiti.svg"
                           quality="100"
@@ -144,13 +144,13 @@ export default function Page() {
               >
                 <div className="vertical-align-center">
                   <small>{employee.title}</small>
-                  <h3 className="mb-1\/2">{employee.name}</h3>
+                  <h3>{employee.name}</h3>
                   <p>{employee.about}</p>
                   <a href={`mailto:${employee.email}`} className="color-primary paragraph-small">
                     {employee.email}
                   </a>
-                  <Button onClick={showSendMessageModal}>Ask for cv</Button>
-                  <div v-if="index === 1" className="graffiti-mobile">
+                  <Button onClick={showSendMessageModal}>Be om CV</Button>
+                  <div v-if="index === 1" className={styles['graffiti-mobile']}>
                     <Image
                       src="/images/graffiti_2.svg"
                       quality="100"
@@ -160,7 +160,7 @@ export default function Page() {
                       alt=""
                     />
                   </div>
-                  <div v-if="index === 3" className="graffiti-mobile">
+                  <div v-if="index === 3" className={styles['graffiti-mobile']}>
                     <Image
                       src="/images/graffiti.svg"
                       width="413"
