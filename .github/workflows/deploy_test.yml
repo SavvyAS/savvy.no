@@ -22,4 +22,3 @@ jobs:
           ssh_key: ${{ secrets.CI_KEY }}
           name: kwrl
           email: hakon@savvy.no
-          clean_repo: true

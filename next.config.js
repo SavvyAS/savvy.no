@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  assetPrefix: './',
   sassOptions: {
     additionalData: `
       @import "styles/variables.scss"; 
@@ -9,9 +9,9 @@ const nextConfig = {
     `
   },
   images: {
-    unoptimized: true
+    loader: 'imgix',
+    path: ''
   },
-  assetPrefix: './'
 }
 
 module.exports = nextConfig
