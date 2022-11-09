@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: './',
   sassOptions: {
     additionalData: `
       @import "styles/variables.scss"; 
