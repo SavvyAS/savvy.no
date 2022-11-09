@@ -5,9 +5,7 @@
 }
 
 .horizontal-scroll {
-  // Horizontal scroll on smaller devices and normal container over 992px
   width: 100vw;
-  // overflow-y: hidden;
   overflow-x: scroll;
   overflow-y: hidden;
   display: grid;
@@ -22,7 +20,6 @@
     column-gap: base();
   }
 
-  // Put spacing on edge of container
   &:before {
     content: '';
     display: inline-block;

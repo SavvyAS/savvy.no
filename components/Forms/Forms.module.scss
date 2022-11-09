@@ -1,0 +1,33 @@
+.form {
+  min-width: min(520px, 100%);
+}
+
+.input {
+  font-family: Akkurat, Arial, Helvetica, sans-serif;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+  display: block;
+  background: transparent;
+  color: $color-secondary;
+  border-bottom: 1px solid $color-secondary;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: normal;
+  padding-top: base(0.5);
+  padding-bottom: base(0.5);
+
+  &:not(:last-child) {
+    margin-bottom: base(1.5);
+  }
+
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: $color-secondary;
+    opacity: 0.7;
+  }
+}

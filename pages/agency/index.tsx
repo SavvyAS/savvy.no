@@ -6,9 +6,16 @@ import clsx from 'clsx'
 import { Button } from 'components/Button/Button'
 import { Card } from 'components/Card/Card'
 import Head from 'next/head'
+import React, { ReactNode, useState } from 'react'
+import { BaseModal } from 'components/Modals/BaseModal'
+import { CvForm } from 'components/Forms/CvForm'
 
 export default function Page() {
   const { agency } = content.pages as Pages
+  const [modalContent, setModalContent] = useState<{
+    content: ReactNode
+    color: string
+  } | null>(null)
 
   const getColor = (i: number) => {
     switch (i) {
@@ -23,12 +30,17 @@ export default function Page() {
     }
   }
 
-  const dynamic = (content: any, color: string) => {
-    // open text modal
+  const openTextModal = (text: string, color: string) => {
+    const content = (
+      <p className="paragraph-large" style={{ maxWidth: '60ch' }}>
+        {text}
+      </p>
+    )
+    setModalContent({ content, color })
   }
 
-  const showSendMessageModal = () => {
-    // open send message modal
+  const openSendMessageModal = () => {
+    setModalContent({ content: <CvForm />, color: 'primary-dark' })
   }
 
   return (
@@ -36,6 +48,15 @@ export default function Page() {
       <Head>
         <title>{agency.metaTitle}</title>
       </Head>
+      {modalContent && (
+        <BaseModal
+          isOpen={!!modalContent}
+          onClose={() => setModalContent(null)}
+          color={modalContent.color}
+        >
+          {modalContent.content}
+        </BaseModal>
+      )}
       <div className={clsx(styles.agency, 'container')}>
         <header>
           <div className="row">
@@ -89,13 +110,13 @@ export default function Page() {
           </div>
           <ul className={styles.ul}>
             {agency.list.items.map((coreValue, index) => (
-              <li className={clsx('row', 'ul')} key={coreValue.name}>
+              <li className={clsx('row', styles.li)} key={coreValue.name}>
                 <div className="column-4">
                   <Button
-                    type="plus"
+                    icon="plus"
                     size="large"
                     color={getColor(index)}
-                    onClick={() => dynamic(coreValue.modalContent, getColor(index))}
+                    onClick={() => openTextModal(coreValue.modalContent, getColor(index))}
                     marginBottom
                   >
                     {coreValue.name}
@@ -154,7 +175,7 @@ export default function Page() {
                     <a href={`mailto:${employee.email}`} className="color-primary paragraph-small">
                       {employee.email}
                     </a>
-                    <Button onClick={showSendMessageModal}>Be om CV</Button>
+                    <Button onClick={openSendMessageModal}>Be om CV</Button>
                     <div v-if="index === 1" className={styles['graffiti-mobile']}>
                       <Image
                         src="/images/graffiti_2.svg"

@@ -1,0 +1,90 @@
+.dialog {
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  margin: base(1);
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {
+    padding: 0;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+
+  &--bg-primary {
+    background-color: $color-primary;
+  }
+  &--bg-primary-dark {
+    background-color: $color-primary-dark;
+  }
+  &--bg-secondary {
+    background-color: $color-secondary;
+  }
+  &--bg-secondary-dark {
+    background-color: $color-secondary-dark;
+  }
+  &--bg-secondary-darker {
+    background-color: $color-secondary-darker;
+  }
+  &--bg-background {
+    background-color: $color-background;
+  }
+  &--bg-background-light {
+    background-color: $color-background-light;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panel {
+  width: 100%;
+  padding: base(3);
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: base(25);
+  width: 100%;
+  background: linear-gradient($color-secondary-darker, transparent);
+}
+
+.close-button {
+  border: 0.5px solid white;
+  margin: 0;
+  width: base(2);
+  height: base(2);
+  border-radius: 50%;
+  outline: 0;
+  background: transparent;
+  color: white;
+  top: base(1);
+  right: base(1);
+  position: absolute;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+}
