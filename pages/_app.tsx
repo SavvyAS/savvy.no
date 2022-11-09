@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import '@fortawesome/fontawesome-pro/css/all.css'
+import '../node_modules/@fortawesome/fontawesome-pro/css/all.min.css'
 import '@/styles/globals.scss'
 import Layout from './layout'
 import Head from 'next/head'
