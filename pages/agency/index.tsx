@@ -176,26 +176,30 @@ export default function Page() {
                       {employee.email}
                     </a>
                     <Button onClick={openSendMessageModal}>Be om CV</Button>
-                    <div v-if="index === 1" className={styles['graffiti-mobile']}>
-                      <Image
-                        src="/images/graffiti_2.svg"
-                        quality="100"
-                        width="379"
-                        style={{ position: 'relative' }}
-                        height="431"
-                        alt=""
-                      />
-                    </div>
-                    <div v-if="index === 3" className={styles['graffiti-mobile']}>
-                      <Image
-                        src="/images/graffiti.svg"
-                        width="413"
-                        quality="100"
-                        height="408"
-                        style={{ position: 'relative' }}
-                        alt=""
-                      />
-                    </div>
+                    {index === 1 && (
+                      <div className={styles['graffiti-mobile']}>
+                        <Image
+                          src="/images/graffiti_2.svg"
+                          quality="100"
+                          width="379"
+                          style={{ position: 'relative' }}
+                          height="431"
+                          alt=""
+                        />
+                      </div>
+                    )}
+                    {index === 3 && (
+                      <div className={styles['graffiti-mobile']}>
+                        <Image
+                          src="/images/graffiti.svg"
+                          width="413"
+                          quality="100"
+                          height="408"
+                          style={{ position: 'relative' }}
+                          alt=""
+                        />
+                      </div>
+                    )}
                   </div>
                 </Card>
               </div>

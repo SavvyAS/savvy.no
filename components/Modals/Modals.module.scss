@@ -7,22 +7,36 @@
   position: fixed;
   inset: 0;
   overflow-y: auto;
-  margin: base(1);
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
-  @media screen and (max-width: map-get($breakpoints, 'md')) {
+.content {
+  position: fixed;
+  inset: 0;
+  animation-name: fade-in;
+  animation-duration: 0.3s;
+  margin: base(5);
+
+  @media screen and (max-width: map-get($breakpoints, md)) {
     margin: 0;
   }
 }
 
-.content {
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panel {
   width: 100%;
-  animation-name: fade-in;
-  animation-duration: 0.5s;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 5%;
 
   &--bg-primary {
     background-color: $color-primary;
@@ -50,20 +64,6 @@
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.panel {
-  width: 100%;
-  padding: base(3);
-}
-
 .close-button {
   border: 0.5px solid white;
   margin: 0;
@@ -73,7 +73,7 @@
   outline: 0;
   background: transparent;
   color: white;
-  top: base(1.5);
+  top: base(1);
   right: base(1);
   position: absolute;
   cursor: pointer;
@@ -81,6 +81,10 @@
   &:hover {
     transform: rotate(90deg);
     transition: transform 0.3s ease;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, md)) {
+    top: base(1.5);
   }
 }
 

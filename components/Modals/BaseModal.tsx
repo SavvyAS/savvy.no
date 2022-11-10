@@ -12,15 +12,13 @@ export const BaseModal = ({ isOpen, onClose, color = 'primary-dark', children }:
   return (
     <Dialog as="div" open={isOpen} className={styles.dialog} onClose={onClose}>
       <div className={styles.container}>
-        <div className={clsx(styles.content, styles[`content--bg-${color}`])}>
-          <Dialog.Panel className={styles.panel}>
-            <div style={{ display: 'grid', placeItems: 'center', height: '100%', width: '100%' }}>
-              {children}
-            </div>
-            <button type="button" className={styles['close-button']} onClick={onClose}>
-              <i className="far fa-times"></i>
-            </button>
+        <div className={clsx(styles.content)}>
+          <Dialog.Panel className={clsx(styles.panel, styles[`panel--bg-${color}`])}>
+            {children}
           </Dialog.Panel>
+          <button type="button" className={styles['close-button']} onClick={onClose}>
+            <i className="far fa-times"></i>
+          </button>
         </div>
       </div>
     </Dialog>
