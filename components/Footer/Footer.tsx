@@ -13,20 +13,17 @@ import { BaseModal } from 'components/Modals/BaseModal'
 export const Footer = () => {
   const { footer } = content.globals as Globals
 
-  const [modalContent, setModalContent] = useState<{
-    content: ReactNode
-    color: string
-  } | null>(null)
+  const [modalContent, setModalContent] = useState<ReactNode | null>(null)
 
   const router = useRouter()
   const pathname = usePathname()
 
   const openUploadCVModal = () => {
-    setModalContent({ content: <CvForm />, color: 'primary-dark' })
+    setModalContent(<CvForm />)
   }
 
   const openSendMessageModal = () => {
-    setModalContent({ content: <ContactForm />, color: 'primary-dark' })
+    setModalContent(<ContactForm />)
   }
 
   const footerText =
@@ -37,12 +34,8 @@ export const Footer = () => {
   return (
     <>
       {modalContent && (
-        <BaseModal
-          isOpen={!!modalContent}
-          onClose={() => setModalContent(null)}
-          color={modalContent.color}
-        >
-          {modalContent.content}
+        <BaseModal isOpen={!!modalContent} onClose={() => setModalContent(null)}>
+          {modalContent}
         </BaseModal>
       )}
       <footer className={clsx('container', styles.footer)}>

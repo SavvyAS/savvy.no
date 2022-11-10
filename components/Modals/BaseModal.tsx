@@ -8,7 +8,7 @@ interface Props extends React.PropsWithChildren {
   color?: string
 }
 
-export const BaseModal = ({ isOpen, onClose, color, children }: Props) => {
+export const BaseModal = ({ isOpen, onClose, color = 'primary-dark', children }: Props) => {
   return (
     <Dialog as="div" open={isOpen} className={styles.dialog} onClose={onClose}>
       <div className={styles.container}>
