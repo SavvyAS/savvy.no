@@ -15,7 +15,6 @@ export const Footer = () => {
 
   const [modalContent, setModalContent] = useState<ReactNode | null>(null)
 
-  const router = useRouter()
   const pathname = usePathname()
 
   const openUploadCVModal = () => {
@@ -69,11 +68,7 @@ export const Footer = () => {
                 <Link href="/clients" className="color-secondary">
                   Kunder
                 </Link>
-                <Link
-                  href="/agency"
-                  className="color-secondary"
-                  onClick={() => router.push('/about')}
-                >
+                <Link href="/agency" className="color-secondary">
                   Selskapet
                 </Link>
                 <Link href="/contact" className="color-secondary">

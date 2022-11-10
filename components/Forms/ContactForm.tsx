@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Button } from 'components/Button/Button'
 import { BaseForm } from './BaseForm'
 import styles from './Forms.module.scss'
@@ -19,7 +20,7 @@ export const ContactForm = () => {
       <input className={styles.input} id="company" placeholder="Selskap" name="company" />
       <input className={styles.input} id="telephone" placeholder="Telefon" name="telephone" />
       <textarea
-        className={styles.input}
+        className={clsx(styles.input, styles.textarea)}
         id="message"
         placeholder="Melding *"
         required

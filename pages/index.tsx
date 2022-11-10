@@ -33,7 +33,7 @@ export default function Index() {
                 <h1 style={{ display: 'none', opacity: 0 }}>{home.heading}</h1>
                 <AnimatedHeading />
                 <Link href="/agency">
-                  <Button>The agency</Button>
+                  <Button>Selskapet</Button>
                 </Link>
               </div>
             </div>

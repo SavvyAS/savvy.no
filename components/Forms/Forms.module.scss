@@ -30,4 +30,16 @@
     color: $color-secondary;
     opacity: 0.7;
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+
+}
+
+.textarea {
+  resize: vertical;
+  height: 80px;
+  max-height: 150px;
 }
