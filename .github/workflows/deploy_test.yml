@@ -14,7 +14,6 @@ jobs:
       - name: Install and Build 🔧
         env:
           ENV: ${{ secrets.ENV }}
-          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
           FEATURE_CV_PARTNER_INTEGRATION_ENABLED: ${{ secrets.FEATURE_CV_PARTNER_INTEGRATION_ENABLED }}
           CV_PARTNER_AUTHORIZATION: ${{ secrets.CV_PARTNER_AUTHORIZATION }}
           CV_PARTNER_URL: ${{ secrets.CV_PARTNER_URL }}
