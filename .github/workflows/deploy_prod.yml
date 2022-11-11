@@ -30,7 +30,7 @@ jobs:
         with:
           changes: out
           repository: ${{ secrets.DEPLOY_REPO }}
-          ssh_key: ${{ secrets.CI_KEY }}
+          ssh_key: ${{ secrets.DEPLOY_CI_PRIVATE_KEY }}
           name: arekve
           email: asbjorn@savvy.no
           clean_repo: true
