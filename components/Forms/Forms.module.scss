@@ -40,6 +40,7 @@
 
 .textarea {
   resize: vertical;
-  height: 80px;
-  max-height: 150px;
+  height: base(5);
+  min-height: base(4);
+  max-height: base(12);
 }
