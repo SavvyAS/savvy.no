@@ -155,7 +155,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   const users = await client.getUsers()
 
-  var skills = new Array<string>()
+  let skills = new Array<string>()
 
   for (const user of users) {
     const cv = await client.getCv(user.id, user.default_cv_id)
