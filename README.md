@@ -11,3 +11,7 @@ Then, run the development server with the doppler dev environment:
 ```bash
 doppler run yarn dev
 ```
+
+### Feature flags:
+
+- FEATURE_CV_PARTNER_INTEGRATION_ENABLED - Enables the integration with CVPartner. Usually disabled when working locally as it makes dynamic page loads rather slow.
