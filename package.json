@@ -8,7 +8,7 @@
     "start": "doppler run -- next start",
     "build": "doppler run -- next build",
     "build:static": "next build && next export",
-    "generate-sitemap": "next-sitemap",
+    "postbuild:static": "next-sitemap",
     "doppler:setup": "doppler setup --project 'savvy-no' --config 'dev'"
   },
   "dependencies": {

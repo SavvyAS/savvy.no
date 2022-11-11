@@ -22,7 +22,6 @@ jobs:
         run: |
           yarn
           yarn build:static
-          yarn generate-sitemap
 
       - name: Create .nojekyll and CNAME in /out ✨
         run: |
