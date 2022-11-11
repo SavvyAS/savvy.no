@@ -6,11 +6,15 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: test
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
       - name: Install and Build
+        env:
+          CV_PARTNER_AUTHORIZATION: ${{ secrets.CV_PARTNER_AUTHORIZATION }}
+          CV_PARTNER_URL: ${{ secrets.CV_PARTNER_URL }}
         run: |
           yarn
           yarn build:static

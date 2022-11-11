@@ -7,10 +7,15 @@ import Link from 'next/link'
 import { Button } from 'components/Button/Button'
 import { HalfImage } from 'components/HalfImage/HalfImage'
 import { HorizontalScrollContainer } from 'components/HorizontalScrollContainer/HorizontalScrollContainer'
+import { CvPartnerClient } from '@/lib/cvpartner'
+import { GetStaticProps } from 'next/types'
 
-export default function Index() {
+type Props = { skills: string[] }
+
+export default function Index({ skills }: Props) {
   const { home } = content.pages as Pages
-  const competenceString = home.competence.map((x) => x + ' // ').join('')
+
+  const competenceString = skills.map((x) => x + ' // ').join('')
 
   return (
     <div>
@@ -143,4 +148,42 @@ export default function Index() {
       </section>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const client = new CvPartnerClient()
+
+  const users = await client.getUsers()
+
+  var skills = new Array<string>()
+
+  for (const user of users) {
+    const cv = await client.getCv(user.id, user.default_cv_id)
+
+    const userSkills = cv.technologies
+      .flatMap((technology) => technology.technology_skills)
+      .flatMap((skill) => skill?.tags?.no)
+      .filter((skill) => !!skill) as string[]
+
+    skills = [...skills, ...userSkills]
+  }
+
+  const uniqueSkills = new Set(skills)
+
+  /* The marquee's speed is relative to the width of its content.
+   * This means that if we add a lot of content it starts moving too fast for anyone to read it.
+   * As a workaround we draw a maximum of 30 skills for now.
+   *
+   * TODO:The long term solution is to make the marquee's speed independent of its width.
+   */
+
+  const selectedSkills = Array.from(uniqueSkills)
+    .sort((_) => Math.random())
+    .slice(0, 30)
+
+  return {
+    props: {
+      skills: selectedSkills
+    }
+  }
 }
