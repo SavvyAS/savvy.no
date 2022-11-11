@@ -141,21 +141,11 @@ export interface TechnologySkill {
     proficiency: number;
     tags?: TranslatedString;
     total_duration_in_years: number;
-    version: number;
 }
 
 export interface Technology {
     _id: string;
-    created_at: Date;
-    disabled: boolean;
-    diverged_from_master: boolean;
-    owner_updated_at: Date;
-    recently_added: boolean;
-    starred: boolean;
     technology_skills: TechnologySkill[];
-    uncategorized: boolean;
-    updated_at: Date;
-    version: number;
 }
 
 export interface TranslatedString {
@@ -222,7 +212,6 @@ export interface CvPartnerCv {
     born_day: number;
     born_month: number;
     born_year: number;
-    bruker_id: string;
     created_at: Date;
     custom_tag_ids: string[];
     cv_roles: CvRole[];
@@ -238,20 +227,14 @@ export interface CvPartnerCv {
     telefon: string;
     title: TranslatedString;
     updated_at: Date;
-    version: number;
     work_experiences: WorkExperience[];
     name: string;
     user_id: string;
-    external_unique_id: string;
     email: string;
     country_code: string;
     language_code: string;
     language_codes: string[];
     custom_tags: CustomTag[];
-    updated_ago: string;
-    template_document_type: string;
-    default_word_template_id: string;
-    image: Image;
-    can_write: boolean;
+    image?: Image;
 }
 
