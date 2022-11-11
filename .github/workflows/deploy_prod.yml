@@ -1,12 +1,12 @@
-name: Build and Deploy Test
+name: Build and Deploy Production
 on:
   push:
     branches:
-      - develop
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: test
+    environment: production
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -26,7 +26,7 @@ jobs:
           touch out/CNAME
           echo ${{ secrets.DEPLOY_URL }} > out/CNAME
 
-      - name: Deploy to test 🚀
+      - name: Deploy to production 🚀
         uses: tagus/git-deploy@v0.4.1
         with:
           changes: out
