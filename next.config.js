@@ -10,6 +10,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  env : {
+  }
 }
 
 module.exports = nextConfig

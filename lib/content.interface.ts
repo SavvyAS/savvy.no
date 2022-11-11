@@ -27,7 +27,6 @@ export interface Home {
   heading: string
   ingress: string
   clients: Client[]
-  competence: string[]
 }
 
 export interface Clients {

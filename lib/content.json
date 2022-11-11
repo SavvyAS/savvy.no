@@ -26,23 +26,7 @@
                     "backgroundPath": "/images/client-background-4.svg",
                     "name": "Adventure Tech"
                 }
-            ],
-            "competence": [
-                "Software development",
-                "Architecture",
-                "Agile",
-                "Mobile",
-                "Web",
-                "Frontend",
-                "Backend",
-                "Full stack",
-                "Tech Lead",
-                "Java",
-                ".NET",
-                "Javascript",
-                "React",
-                "Angular"
-            ]
+            ]        
         },
         "clients": {
             "metaTitle": "Savvy | Kunder",
