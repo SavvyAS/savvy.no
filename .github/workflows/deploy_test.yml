@@ -35,3 +35,4 @@ jobs:
           name: arekve
           email: asbjorn@savvy.no
           clean_repo: true
+          branch: main
