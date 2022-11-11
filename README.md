@@ -15,6 +15,7 @@ volta install node
 
 _Current versions are defined in `<root>/package.json`, under the `volta` section._
 
+
 ### Environment variables
 
 We use Doppler to synchronize our environment variables. There is no need to have .env files locally in this project. If you don't have access to Doppler, simply request access from hakon@savvy.no. The project in Doppler is called savvy-no and the dev enrivonment should be used when working locally.
@@ -32,6 +33,12 @@ doppler login
 ```
 
 This will open a browser window and allow you to log in.
+
+
+### Feature flags:
+
+- FEATURE_CV_PARTNER_INTEGRATION_ENABLED - Enables the integration with CVPartner. Usually disabled when working locally as it makes dynamic page loads rather slow.
+
 
 ### Setup
 

@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { Button } from 'components/Button/Button'
 import { HalfImage } from 'components/HalfImage/HalfImage'
 import { HorizontalScrollContainer } from 'components/HorizontalScrollContainer/HorizontalScrollContainer'
-import { CvPartnerClient } from '@/lib/cvpartner'
+import { CvPartnerClientFactory } from '@/lib/cvpartner'
 import { GetStaticProps } from 'next/types'
 
 type Props = { skills: string[] }
@@ -151,7 +151,7 @@ export default function Index({ skills }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = new CvPartnerClient()
+  const client = CvPartnerClientFactory.Create()
 
   const users = await client.getUsers()
 
@@ -159,6 +159,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   for (const user of users) {
     const cv = await client.getCv(user.id, user.default_cv_id)
+
+    if (!cv) {
+      continue
+    }
 
     const userSkills = cv.technologies
       .flatMap((technology) => technology.technology_skills)
