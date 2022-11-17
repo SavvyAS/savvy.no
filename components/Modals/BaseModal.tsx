@@ -1,6 +1,8 @@
 import { Dialog } from '@headlessui/react'
 import clsx from 'clsx'
 import styles from './Modals.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/pro-regular-svg-icons'
 
 interface Props extends React.PropsWithChildren {
   isOpen: boolean
@@ -17,7 +19,7 @@ export const BaseModal = ({ isOpen, onClose, color = 'primary-dark', children }:
             {children}
           </Dialog.Panel>
           <button type="button" className={styles['close-button']} onClick={onClose}>
-            <i className="far fa-times"></i>
+            <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
       </div>
