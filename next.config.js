@@ -6,9 +6,6 @@ const nextConfig = {
       @import "styles/variables.scss"; 
       @import "styles/mixins.scss";
     `
-  },
-  images: {
-    unoptimized: true,
   }
 }
 
