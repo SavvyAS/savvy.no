@@ -23,7 +23,7 @@
                 },
                 {
                     "logoPath": "/images/Sbanken_logo.svg",
-                    "backgroundPath": "/images/Sbanken_bakgrunn.png",
+                    "backgroundPath": "/images/client-background-2.svg",
                     "name": "Sbanken"
                 },
                 {
@@ -69,7 +69,7 @@
                 }, 
                 {
                     "logoPath": "/images/Sbanken_logo.svg",
-                    "backgroundPath": "/images/Sbanken_bakgrunn.png",
+                    "backgroundPath": "/images/client-background-1.svg",
                     "name": "Sbanken",
                     "text": "Sbanken er en bank med hovedkontor i Bergen, og er Norges første rene nettbank. Savvy er en del av et team som utvikler neste generasjons nettbank.",
                     "websiteUrl": "https://sbanken.no"
