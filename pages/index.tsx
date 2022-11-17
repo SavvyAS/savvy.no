@@ -9,8 +9,6 @@ import { HalfImage } from 'components/HalfImage/HalfImage'
 import { HorizontalScrollContainer } from 'components/HorizontalScrollContainer/HorizontalScrollContainer'
 import { CvPartnerClientFactory } from '@/lib/cvpartner'
 import { GetStaticProps } from 'next/types'
-import headerImage1 from '../public/images/header-image-1.png'
-import headerImage2 from '../public/images/header-image-2.png'
 
 type Props = { skills: string[] }
 
@@ -22,7 +20,18 @@ export default function Index({ skills }: Props) {
   return (
     <div>
       <header>
-        <HalfImage image={<Image src={headerImage1} sizes="sm:300px lg:600px" alt="" />}>
+        <HalfImage
+          image={
+            <Image
+              src="/images/header-image-1.png"
+              width="628"
+              height="790"
+              quality="100"
+              sizes="sm:300px lg:600px"
+              alt=""
+            />
+          }
+        >
           <div className="row">
             <div className="column-2">
               <div className="header-text">
@@ -38,6 +47,7 @@ export default function Index({ skills }: Props) {
             className="graffiti-1"
             src="/images/graffiti.svg"
             width="413"
+            quality="100"
             height="408"
             alt=""
           />
@@ -52,7 +62,13 @@ export default function Index({ skills }: Props) {
       <section>
         <HalfImage
           image={
-            <Image src={headerImage2} width="628" height="790" sizes="sm:300px lg:600px" alt="" />
+            <Image
+              src="/images/header-image-2.png"
+              width="628"
+              height="790"
+              sizes="sm:300px lg:600px"
+              alt=""
+            />
           }
         >
           <div style={{ display: 'grid', alignContent: 'end', height: '100%' }}>
