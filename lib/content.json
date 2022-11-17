@@ -17,6 +17,11 @@
                     "name": "Fjord Tours"
                 },
                 {
+                    "logoPath": "/images/dnb-logo.svg",
+                    "backgroundPath": "/images/client-background-4.svg",
+                    "name": "DNB"
+                },
+                {
                     "logoPath": "/images/Sbanken_logo.svg",
                     "backgroundPath": "/images/Sbanken_bakgrunn.png",
                     "name": "Sbanken"
@@ -40,6 +45,13 @@
                     "name": "BankID BankAxept",
                     "text": "BankID er Norges foretrukne løsning for ID-tjenester, benyttet av offentlige tjenester, banker, forsikringselskaper og mange flere. Savvy bidrar i arbeidet med neste generasjon av BankID sine tjenester.",
                     "websiteUrl": "https://bankid.no"
+                },
+                {
+                    "logoPath": "/images/dnb-logo.svg",
+                    "backgroundPath": "/images/client-background-2-wide.svg",
+                    "name": "DNB",
+                    "text": "DNB er Norges største bank og en nøkkelvirksomhet i norsk økonomi.",
+                    "websiteUrl": "https://dnb.no"
                 },
                 {
                     "logoPath": "/images/adventure_tech_logo.svg",
