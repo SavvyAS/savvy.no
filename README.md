@@ -34,6 +34,10 @@ doppler login
 
 This will open a browser window and allow you to log in.
 
+Doppler is also needed when installing dependencies.
+```
+doppler run -- yarn install
+```
 
 ### Feature flags:
 

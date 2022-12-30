@@ -9,6 +9,7 @@ import Head from 'next/head'
 import React, { ReactNode, useState } from 'react'
 import { BaseModal } from 'components/Modals/BaseModal'
 import { CvForm } from 'components/Forms/CvForm'
+import ParallaxImage from '@/components/ParallaxImage/ParallaxImage'
 
 export default function Page() {
   const { agency } = content.pages as Pages
@@ -135,7 +136,7 @@ export default function Page() {
                   alignRight={index % 2 !== 0}
                   image={
                     <div className={styles['card-image-wrapper']}>
-                      <Image
+                      <ParallaxImage
                         src={employee.imagePath}
                         alt=""
                         width="379"
