@@ -83,5 +83,6 @@ export interface Employees {
   name: string
   title: string
   about: string
-  email: string
+  email: string,
+  cvPartnerId?: string;
 }

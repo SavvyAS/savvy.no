@@ -1,5 +1,5 @@
 import content from '@/lib/content.json'
-import { Pages } from '@/lib/content.interface'
+import {Agency, Employees, Pages} from '@/lib/content.interface'
 import Image from 'next/image'
 import styles from './index.module.scss'
 import clsx from 'clsx'
@@ -10,9 +10,13 @@ import React, { ReactNode, useState } from 'react'
 import { BaseModal } from 'components/Modals/BaseModal'
 import { CvForm } from 'components/Forms/CvForm'
 import ParallaxImage from '@/components/ParallaxImage/ParallaxImage'
+import {GetStaticProps} from "next/types";
+import {CvPartnerClientFactory} from "@/lib/cvpartner";
+import {CvPartnerCv, CvPartnerUser} from "@/lib/cvpartner.interface";
+import {downloadAndStoreInPublic} from "@/lib/downloadAndStoreInAssets";
 
-export default function Page() {
-  const { agency } = content.pages as Pages
+export default function Page({ agency, employees }: Props) {
+
   const [modalContent, setModalContent] = useState<{
     content: ReactNode
     color: string
@@ -129,21 +133,26 @@ export default function Page() {
         </section>
         <section className={styles.employees}>
           <h2 className="sr-only">Employees</h2>
-          {agency.team.map((employee, index) => (
+          {employees.map((employee, index) => (
             <div className={clsx('row', styles.employees__row)} key={employee.name + index}>
               <div className={index % 2 === 0 ? 'column' : 'column-2'}>
                 <Card
                   alignRight={index % 2 !== 0}
                   image={
                     <div className={styles['card-image-wrapper']}>
-                      <ParallaxImage
-                        src={employee.imagePath}
-                        alt=""
-                        width="379"
-                        height="431"
-                        quality="100"
-                        sizes="sm:400px md:100% lg:800px"
-                      />
+                      <div className={styles['card-image-container']}>
+                        <Image
+                          src={employee.imagePath}
+                          alt=""
+                          width="379"
+                          height="431"
+                          quality="100"
+                          sizes="sm:400px md:100% lg:800px"
+                          className={styles["image-actual"]}
+                        />
+                        { employee.overlayPath && <Image className={styles["overlay-image"]} src={employee.overlayPath} alt="" width={379} height={431} quality={100} sizes="sm:400px md:100% lg:800px" />}
+                      </div>
+
                       {index === 1 && (
                         <div className={styles.graffiti}>
                           <Image
@@ -184,6 +193,7 @@ export default function Page() {
                           quality="100"
                           width="379"
                           style={{ position: 'relative' }}
+
                           height="431"
                           alt=""
                         />
@@ -210,4 +220,61 @@ export default function Page() {
       </div>
     </>
   )
+}
+
+type Employee = {
+  email: string,
+  title: string,
+  about: string,
+  name: string,
+  imagePath: string,
+  overlayPath: string | null,
+}
+
+type Props = { employees: Employee[], agency: Agency };
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const agency = content.pages.agency as Agency;
+
+  const client = CvPartnerClientFactory.Create();
+
+  const cvPartnerUsers = (await client.getUsers()).reduce(
+      (current, user) => ({ ...current, [user.id]: user}),
+      {} as {[key:string]: CvPartnerUser}
+  );
+
+  console.log(cvPartnerUsers);
+
+  const employees: Employee[] = await Promise.all(agency.team.map(async employee => {
+    if (!employee.cvPartnerId)
+      return {...employee};
+
+    const cvPartner = cvPartnerUsers[employee.cvPartnerId];
+
+    if (!cvPartner)
+      return {...employee};
+
+    const cv = await client.getCv(cvPartner.id, cvPartner.default_cv_id);
+
+    if (!cv)
+      return {...employee};
+
+    let imagePath = "/images/header-image-1.png";
+    let overlayPath = null;
+    if (cvPartner?.image?.url) {
+      await downloadAndStoreInPublic(cvPartner.image.url,"images/from_cv_partner", `${cvPartner.id}.png`);
+      overlayPath = "/images/header-image-1.png";
+      imagePath = `/images/from_cv_partner/${cvPartner.id}.png`;
+    }
+
+    return {
+      ...employee,
+      name: cvPartner.name,
+      email: cvPartner.email,
+      imagePath,
+      overlayPath: overlayPath
+    };
+  }));
+
+  return { props: {  employees, agency }}
 }

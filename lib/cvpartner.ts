@@ -2,157 +2,73 @@ import { CvPartnerCv, CvPartnerUser, ICvPartnerClient } from "./cvpartner.interf
 
 export class CvPartnerClientFactory {
     public static Create(): ICvPartnerClient {
-        if (process.env.FEATURE_CV_PARTNER_INTEGRATION_ENABLED === "true") {
 
-            if (!process.env.CV_PARTNER_URL) {
-                throw new Error("CV_PARTNER_URL must be defined")
-            }
+        const instance = (global as any)[Symbol.for("global_cv_partner_instance")];
 
-            if (!process.env.CV_PARTNER_AUTHORIZATION) {
-                throw new Error("CV_PARTNER_AUTHORIZATION must be defined")
-            }
+        if (instance != null)
+            return instance;
 
-            return new CvPartnerClient(
-                process.env.CV_PARTNER_URL,
-                process.env.CV_PARTNER_AUTHORIZATION
-            )
+        if (!process.env.CV_PARTNER_URL) {
+            throw new Error("CV_PARTNER_URL must be defined")
         }
 
-        return new MockedCvPartnerClient()
+        if (!process.env.CV_PARTNER_AUTHORIZATION) {
+            throw new Error("CV_PARTNER_AUTHORIZATION must be defined")
+        }
+
+        const new_instance = new CvPartnerClient(
+            process.env.CV_PARTNER_URL,
+            process.env.CV_PARTNER_AUTHORIZATION
+        );
+
+        (global as any)[Symbol.for("global_cv_partner_instance")] = new_instance;
+
+        return new_instance;
     }
 }
 
-class CvPartnerClient implements ICvPartnerClient {
-    public constructor(private baseUrl: string, private authorization: string) { }
 
+class CvPartnerClient implements ICvPartnerClient {
+    public constructor(private baseUrl: string, private authorization: string) {
+
+        console.log("instance")
+    }
+
+
+    private getCvCache: Map<string, CvPartnerCv> = new Map<string, CvPartnerCv>();
     async getCv(userId: string, cvId: string): Promise<CvPartnerCv> {
+        const cacheKey = `${userId}-${cvId}`;
+        const cached = this.getCvCache.get(cacheKey);
+        if (cached)
+            return cached;
+
+        console.log("Fetching cv from Cv partner", userId, cvId);
+
         const url = new URL(`/api/v3/cvs/${userId}/${cvId}`, this.baseUrl)
         const response = await fetch(url.href, {
             headers: {
                 "Authorization": this.authorization
             }
         })
-        const body = await response.json()
-
-        return body as CvPartnerCv
+        const body = await response.json() as CvPartnerCv;
+        this.getCvCache.set(cacheKey, body);
+        return body;
     }
+
+    private getUsersCache: CvPartnerUser[] | undefined;
     async getUsers(): Promise<CvPartnerUser[]> {
+        if (this.getUsersCache)
+            return this.getUsersCache;
+
+        console.log("Fetching users from Cv partner")
         const url = new URL("/api/v1/users", this.baseUrl)
         const response = await fetch(url.href, {
             headers: {
                 "Authorization": this.authorization
             }
         })
-        const body = await response.json()
-
-        return body as CvPartnerUser[]
+        const body = await response.json() as CvPartnerUser[];
+        this.getUsersCache = body;
+        return body;
     }
-}
-
-class MockedCvPartnerClient implements ICvPartnerClient {
-
-    async getCv(userId: string, cvId: string): Promise<CvPartnerCv | null> {
-        return {
-            _id: cvId,
-            born_day: 20,
-            born_month: 10,
-            born_year: 1990,
-            created_at: new Date(),
-            custom_tag_ids: [],
-            cv_roles: [],
-            default: true,
-            educations: [],
-            key_qualifications: [],
-            languages: [],
-            nationality: { no: "Norsk" },
-            navn: "Test Testersen",
-            place_of_residence: { no: "Bergen" },
-            project_experiences: [],
-            technologies: [{
-                _id: "123",
-                technology_skills: [
-                    {
-                        _id: "321",
-                        base_duration_in_years: 1,
-                        offset_duration_in_years: 1,
-                        order: 0,
-                        proficiency: 1,
-                        total_duration_in_years: 2,
-                        tags: {
-                            no: "Java"
-                        }
-                    },
-                    {
-                        _id: "321",
-                        base_duration_in_years: 1,
-                        offset_duration_in_years: 1,
-                        order: 0,
-                        proficiency: 1,
-                        total_duration_in_years: 2,
-                        tags: {
-                            no: "Javascript"
-                        }
-                    },
-                    {
-                        _id: "321",
-                        base_duration_in_years: 1,
-                        offset_duration_in_years: 1,
-                        order: 0,
-                        proficiency: 1,
-                        total_duration_in_years: 2,
-                        tags: {
-                            no: "Typescript"
-                        }
-                    },
-                    {
-                        _id: "321",
-                        base_duration_in_years: 1,
-                        offset_duration_in_years: 1,
-                        order: 0,
-                        proficiency: 1,
-                        total_duration_in_years: 2,
-                        tags: {
-                            no: "NodeJS"
-                        }
-                    },
-                    {
-                        _id: "321",
-                        base_duration_in_years: 1,
-                        offset_duration_in_years: 1,
-                        order: 0,
-                        proficiency: 1,
-                        total_duration_in_years: 2,
-                        tags: {
-                            no: ".NET"
-                        }
-                    },
-                ]
-            }],
-            telefon: "45674567",
-            title: { no: "Test Testersen" },
-            updated_at: new Date(),
-            work_experiences: [],
-            name: "Test Testersen",
-            user_id: userId,
-            email: "test.testersen@savvy.no",
-            country_code: "no",
-            language_code: "no-NB",
-            language_codes: ["no-NB"],
-            custom_tags: []
-        }
-    }
-
-    async getUsers(): Promise<CvPartnerUser[]> {
-        return [
-            {
-                id: "123123",
-                office_name: "Savvy",
-                office_id: "321321",
-                email: "hakon@savvy.no",
-                default_cv_id: "789789",
-                telephone: "45674567"
-            }
-        ]
-    }
-
 }

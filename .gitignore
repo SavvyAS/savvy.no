@@ -12,6 +12,8 @@
 /.next/
 /out/
 
+/public/images/from_cv_partner
+
 # production
 /build
 

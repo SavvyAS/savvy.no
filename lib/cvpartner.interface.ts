@@ -10,6 +10,8 @@ export interface CvPartnerUser {
     email: string
     default_cv_id: string
     telephone: string
+    name: string
+    image?: { url?: string }
 }
 
 export interface CvRole {
@@ -237,4 +239,3 @@ export interface CvPartnerCv {
     custom_tags: CustomTag[];
     image?: Image;
 }
-

@@ -68,3 +68,17 @@
     display: none;
   }
 }
+
+.card-image-container {
+  position: relative;
+}
+
+.overlay-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0.85;
+}
+
+.image-actual {
+  filter: brightness(0) saturate(100%);
+}
