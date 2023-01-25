@@ -39,6 +39,7 @@
     height: 100%;
     object-fit: cover;
   }
+
   .graffiti {
     position: absolute;
     z-index: 1;
@@ -69,10 +70,6 @@
   }
 }
 
-.card-image-container {
-  position: relative;
-}
-
 .overlay-image {
   position: absolute;
   inset: 0;
@@ -80,5 +77,18 @@
 }
 
 .image-actual {
-  filter: brightness(0) saturate(100%);
+}
+
+.blended-image {
+  position: relative;
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 900px;
+}
+
+.blended-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/Savvy_portrait_overlay_horizontal.png");
 }

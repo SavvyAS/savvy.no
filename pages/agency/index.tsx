@@ -14,6 +14,7 @@ import {GetStaticProps} from "next/types";
 import {CvPartnerClientFactory} from "@/lib/cvpartner";
 import {CvPartnerCv, CvPartnerUser} from "@/lib/cvpartner.interface";
 import {downloadAndStoreInPublic} from "@/lib/downloadAndStoreInAssets";
+import {ST} from "next/dist/shared/lib/utils";
 
 export default function Page({ agency, employees }: Props) {
 
@@ -141,16 +142,25 @@ export default function Page({ agency, employees }: Props) {
                   image={
                     <div className={styles['card-image-wrapper']}>
                       <div className={styles['card-image-container']}>
-                        <Image
-                          src={employee.imagePath}
-                          alt=""
-                          width="379"
-                          height="431"
-                          quality="100"
-                          sizes="sm:400px md:100% lg:800px"
-                          className={styles["image-actual"]}
-                        />
-                        { employee.overlayPath && <Image className={styles["overlay-image"]} src={employee.overlayPath} alt="" width={379} height={431} quality={100} sizes="sm:400px md:100% lg:800px" />}
+                        {/*<Image*/}
+                        {/*  src={employee.imagePath}*/}
+                        {/*  alt=""*/}
+                        {/*  width="379"*/}
+                        {/*  height="431"*/}
+                        {/*  quality="100"*/}
+                        {/*  sizes="sm:400px md:100% lg:800px"*/}
+                        {/*  className={styles["image-actual"]}*/}
+                        {/*/>*/}
+                        {/*{ employee.overlayPath && <Image className={styles["overlay-image"]} src={employee.overlayPath} alt="" width={379} height={431} quality={100} sizes="sm:400px md:100% lg:800px" />}*/}
+
+                      <div className={styles["blended-image-container"]}>
+                        <div style={{
+                          background: `url("/images/Savvy_portrait_background_horizontal.png"), url(${employee.imagePath})`,
+                          backgroundSize: "cover",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center"
+                        }} className={styles["blended-image"]}></div>
+                      </div>
                       </div>
 
                       {index === 1 && (
