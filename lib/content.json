@@ -7,9 +7,9 @@
             "ingress": "Vi er Savvy, seniorutviklere som er håndplukket gjennom relasjoner, der alle eier en bit av selskapet. Vi har tung kompetanse, kombinert med en klar røst. Vi skriver ikke bare kode, vi bidrar med kompetanse og tydelige meninger i prosjektene vi jobber på. ",
             "clients": [
                 {
-                    "logoPath": "/images/vipps.svg",
+                    "logoPath": "/images/bankid.svg",
                     "backgroundPath": "/images/client-background-1.svg",
-                    "name": "BankID"
+                    "name": "BankID BankAxept"
                 },
                 {
                     "logoPath": "/images/fjordtours.svg",
