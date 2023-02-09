@@ -184,10 +184,10 @@
                 },
                 {
                     "imagePath": "/images/header-image-1.png",
-                    "name": "Ny ansatt",
+                    "name": "Torstein Winjum",
                     "title": "Konsulent",
-                    "email": "",
-                    "about": "Vi får en ny ansatt i januar!"
+                    "email": "torstein@savvy.no",
+                    "about": "Torstein er systemutvikler med god erfaring med backend-utvikling, og er ikke redd for å ta tak i en frontendoppgave når det trengs. Han er interessert i hele utviklingsprosessen, alt fra planlegging, til utvikling, til distribusjon. Han setter også stor pris på selve håndverket, og streber etter å skrive lettlest, konsis, vedlikeholdbar kode."
                 },
                 {
                     "imagePath": "/images/header-image-1.png",
