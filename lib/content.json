@@ -186,15 +186,15 @@
                     "imagePath": "/images/people/torstein.jpg",
                     "name": "Torstein Winjum",
                     "title": "Konsulent",
-                    "email": "",
-                    "about": ""
+                    "email": "torstein@savvy.no",
+                    "about": "Torstein er systemutvikler med god erfaring med backend-utvikling, og er ikke redd for å ta tak i en frontendoppgave når det trengs. Han er interessert i hele utviklingsprosessen, alt fra planlegging, til utvikling, til distribusjon. Han setter også stor pris på selve håndverket, og streber etter å skrive lettlest, konsis, vedlikeholdbar kode."
                 },
                 {
                     "imagePath": "/images/people/erichsen.jpg",
                     "name": "Sindre Erichsen",
                     "title": "Konsulent",
-                    "email": "",
-                    "about": ""
+                    "email": "sindre.erichsen@savvy.no",
+                    "about": "Sindre er en allsidig utvikler med nesten 7 års erfaring som utvikler i Keyforce. Her har han gått gradene fra utvikler til tech lead. Han er nå blitt en senior fullstack utvikler som gjennom arbeid med flere økonomisystemer, også har god forståelse for økonomi."
                 }
             ]
         },

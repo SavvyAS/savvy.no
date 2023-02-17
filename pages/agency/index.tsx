@@ -136,14 +136,19 @@ export default function Page() {
                   alignRight={index % 2 !== 0}
                   image={
                     <div className={styles['card-image-wrapper']}>
-                      <ParallaxImage
-                        src={employee.imagePath}
-                        alt=""
-                        width="379"
-                        height="431"
-                        quality="100"
-                        sizes="sm:400px md:100% lg:800px"
-                      />
+                      <div style={{
+                        height: '417px',
+                        width: '524px',
+                        background: `
+                          url(${employee.imagePath}),
+                          linear-gradient(to bottom right, rgba(154, 32, 126, 1.0), rgba(81, 3, 45, 1.0))
+                        `,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "top",
+                        backgroundBlendMode: "multiply",
+                      }}>
+                      </div>
                       {index === 1 && (
                         <div className={styles.graffiti}>
                           <Image
