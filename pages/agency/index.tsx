@@ -137,8 +137,8 @@ export default function Page() {
                   image={
                     <div className={styles['card-image-wrapper']}>
                       <div style={{
-                        height: '417px',
-                        width: '524px',
+                        width: '100%',
+                        aspectRatio: index % 2 !== 0 ? '3/4' : '4/3',
                         background: `
                           url(${employee.imagePath}),
                           linear-gradient(to bottom right, rgba(154, 32, 126, 1.0), rgba(81, 3, 45, 1.0))

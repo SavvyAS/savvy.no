@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cf8d1c1-ca3c-4fcb-a3e0-4e15c0936ef0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.savvy.no.dir/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.savvy.no.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.savvy.no.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/content.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/content.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/agency/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/agency/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +37,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676624915013</updated>
       <workItem from="1676624918418" duration="2890000" />
-      <workItem from="1676638397976" duration="7102000" />
+      <workItem from="1676638397976" duration="7784000" />
     </task>
     <servers />
   </component>
