@@ -127,74 +127,74 @@
             },
             "team": [
                 {
-                    "imagePath": "/images/people/hakon.png",
+                    "imagePath": "/images/people/kaurel.jpg",
                     "name": "Håkon Gimnes Kaurel",
                     "title": "Daglig leder / Konsulent",
                     "about": "Håkon er en fullstack-utvikler med et bredt sett av ferdigheter. Han er komfortabel med å jobbe på omtrent hvilken som helst plattform og har flere års erfaring med å jobbe med både Java og .NET. Fremfor alt ser Håkon på seg selv som en pragmatisk programvareutvikler som vil jobbe hardt for å sikre at arbeidet hans genererer verdi for kundene sine.",
                     "email": "hakon@savvy.no"
                 },
                 {
-                    "imagePath": "/images/people/joachim.png",
+                    "imagePath": "/images/people/joachim.jpg",
                     "name": "Joachim Carlsen",
                     "title": "Konsulent",
                     "about": "Joachim er en utvikler med flere års erfaring fra å jobbe med kjente merkevarer som Vipps, TV2 og Altibox. I løpet av sin karriere har Joachim jobbet med flere teknologier og har bygget solid kompetanse på Java-plattformen og som iOS-utvikler.",
                     "email": "joachim@savvy.no"
                 },
                 {
-                    "imagePath": "/images/people/erlend.png",
+                    "imagePath": "/images/people/erlend.jpg",
                     "name": "Erlend Rekve",
                     "title": "Konsulent",
                     "about": "Erlend er full stack-utvikler med en mastergrad i informatikk. Han har flere års erfaring med å jobbe med komplekse systemer primært på .NET-plattformen. Han er kjent av sine kolleger for å være en grundig og innovativ utvikler.",
                     "email": "erlend@savvy.no"
                 },
                 {
-                    "imagePath": "/images/people/abdullah.png",
+                    "imagePath": "/images/people/abdullah.jpg",
                     "name": "Abdullah Shaheen",
                     "title": "Konsulent",
                     "about": "Abdullah er en utvikler med erfaring fra arbeid med store og komplekse systemer. Han har erfaring fra arbeid på .NET-plattformen samt flere ulike frontend-teknologier.",
                     "email": "abdullah@savvy.no"
                 },
                 {
-                    "imagePath": "/images/people/trandal.png",
+                    "imagePath": "/images/people/trandal.jpg",
                     "name": "Håkon Trandal",
                     "title": "Konsulent",
                     "about": "Håkon er en fullstack-utvikler med 8 års .NET-erfaring. Han har jobbet med alt fra små nettsider til dataspill og store bedriftssystemer. Håkon jobber godt i team og er godt respektert for sin evne til å forklare begreper.",
                     "email": "hakon.trandal@savvy.no"
                 },
                 {
-                    "imagePath": "/images/people/sindre.png",
+                    "imagePath": "/images/people/braaten.jpg",
                     "name": "Sindre Møgster Braaten",
                     "title": "Konsulent",
                     "email": "sindre@savvy.no",
                     "about": "Sindre er en systemutvikler som trives like godt med å jobbe med backend, som å jobbe med frontend, under utvikling av systemer. Han har alltid hatt en fasinasjon for å finne ut hvordan systemer faktisk virker, uavhengig av om det gjelder hvordan effektivt gjør tunge operasjoner på en server, eller et brukergrensesnitt skal oppføre seg så smidig som mulig."
                 },
                 {
-                    "imagePath": "/images/header-image-1.png",
+                    "imagePath": "/images/people/ole.jpg",
                     "name": "Ole Eskild Steensen",
                     "title": "Konsulent",
                     "email": "ole@savvy.no",
                     "about": "Ole Eskild har erfaring med en rekke teknologier og metodikker og har jobbet med alt fra API-tjenester og sky-infrastuktur til komplekse frontend applikasjoner. Han trives best med eierskap til hele teknologi-stacken, men liker også å bryne seg på rene backend eller frontend prosjekter. "
                 },
                 {
-                    "imagePath": "/images/people/asbjorn.png",
+                    "imagePath": "/images/people/asbjorn.jpg",
                     "name": "Asbjørn Rekve",
                     "title": "Konsulent",
                     "email": "asbjorn@savvy.no",
                     "about": "Asbjørn er en allsidig utvikler med bred kompetanse innen utvikling av webløsninger. Gjennom prosjekter hos Guilty, Sbanken, Forsvaret, Equinor, og tidligere som CTO for Powerzeek, har han hatt utfordrende arbeidsoppgaver og er vant med stort ansvar. Han har erfaring med å jobbe både selvstendig og sammen med andre, og har spesielt god erfaring fra autonome team."
                 },
                 {
-                    "imagePath": "/images/header-image-1.png",
-                    "name": "Ny ansatt",
+                    "imagePath": "/images/people/torstein.jpg",
+                    "name": "Torstein Winjum",
                     "title": "Konsulent",
                     "email": "",
-                    "about": "Vi får en ny ansatt i januar!"
+                    "about": ""
                 },
                 {
-                    "imagePath": "/images/header-image-1.png",
-                    "name": "Ny ansatt",
+                    "imagePath": "/images/people/erichsen.jpg",
+                    "name": "Sindre Erichsen",
                     "title": "Konsulent",
                     "email": "",
-                    "about": "Vi får en ny ansatt i februar!"
+                    "about": ""
                 }
             ]
         },
