@@ -1,0 +1,78 @@
+    const  ProgressBarCounterAccFlow: React.FC<{ hasCompleted: boolean, estimatedDuration: number, makeFaster: boolean}> = (
+        { hasCompleted, estimatedDuration, makeFaster }) => {
+
+    return (
+        <div>
+            <div className="bar" style={{
+                    background: '#efefef',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    marginBottom: '2em',
+                    width: '100%',
+                    borderRadius: '10px',
+                    border: '1px solid #712cff',
+                    boxShadow: '0 0 10px #712cff'
+
+                }}>
+
+                <div className="progress" style={{
+                        height: '2em',
+                        backgroundColor: '#e01de0',
+                        overflow: 'hidden',
+                        animation: 'bar 4s linear'
+                    }}>
+
+                    {makeFaster && <div className="counter-flow-speedup" style={{
+                        height: '2em',
+                        width: '300%',
+                        position: 'absolute',
+                        zIndex: 1,
+                        top: 0,
+                        left: 0,
+                        backgroundSize: '60px 60px',
+                        opacity: '0.3',
+                        backgroundImage: `linear-gradient(
+                            45deg,
+                            #efefef 25%,
+                            transparent 25%,
+                            transparent 50%,
+                            #efefef 50%,
+                            #efefef 75%,
+                            transparent 75%,
+                            transparent
+                          )`,
+                          animation: 'counter-flow-speedup 4s ease-in'
+                        }}>
+                    
+                    </div>}
+                </div>
+
+            </div>
+
+            <style>
+                {`
+                    @keyframes bar {
+                        0% {
+                            width: 0%;
+                        }
+                        100% {
+                            width: 100%;
+                        }
+                    }
+
+                    @keyframes counter-flow-speedup {
+                          0% {
+                            transform: translateX(0);
+                          }
+                          100% {
+                            transform: translateX(-20%);
+                          }
+                    }
+                `}
+            </style>
+        </div>
+)
+
+}
+
+export default ProgressBarCounterAccFlow
