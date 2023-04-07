@@ -1,5 +1,8 @@
+import { useState } from "react";
+
     const  ProgressBarCounterAccFlow: React.FC<{ hasCompleted: boolean, estimatedDuration: number, makeFaster: boolean}> = (
-        { hasCompleted, estimatedDuration, makeFaster }) => {
+        { makeFaster }) => {
+            const [isLoading, setIsLoading] = useState(false);
 
     return (
         <div>
@@ -19,7 +22,8 @@
                         height: '2em',
                         backgroundColor: '#e01de0',
                         overflow: 'hidden',
-                        animation: 'bar 4s linear'
+                        animation: isLoading ? 'bar 5s linear' : "none",
+                        width: isLoading ? "100%" : "0%"
                     }}>
 
                     {makeFaster && <div className="counter-flow-speedup" style={{
@@ -41,12 +45,20 @@
                             transparent 75%,
                             transparent
                           )`,
-                          animation: 'counter-flow-speedup 4s ease-in'
+                          animation: isLoading ? 'counter-flow-speedup 5s ease-in' : "none",
                         }}>
                     
                     </div>}
                 </div>
 
+            </div>
+            <div style={{ marginBottom: "1em" }}>
+                <input
+                    type="checkbox"
+                    checked={isLoading}
+                    onChange={() => setIsLoading(!isLoading)}
+                />
+                <label htmlFor="loading">Loading Animation</label>
             </div>
 
             <style>
