@@ -6,6 +6,17 @@ import { useState } from "react";
 
     return (
         <div>
+             <div style={{ marginBottom: "1em", fontSize: "22px" }}>
+                <input
+                    type="checkbox"
+                    style={{ transform: "scale(1.5)" }}
+                    checked={isLoading}
+                    onChange={() => setIsLoading(!isLoading)}
+                />
+                <label htmlFor="loading" style={{ marginLeft: "1em" }}>
+                    Huk av for å starte lasting
+                </label>
+            </div>
             <div className="bar" style={{
                     background: '#efefef',
                     position: 'relative',
@@ -22,7 +33,7 @@ import { useState } from "react";
                         height: '2em',
                         backgroundColor: '#e01de0',
                         overflow: 'hidden',
-                        animation: isLoading ? 'bar 5s linear' : "none",
+                        animation: isLoading ? 'bar 5s ease-in' : "none",
                         width: isLoading ? "100%" : "0%"
                     }}>
 
@@ -52,15 +63,6 @@ import { useState } from "react";
                 </div>
 
             </div>
-            <div style={{ marginBottom: "1em" }}>
-                <input
-                    type="checkbox"
-                    checked={isLoading}
-                    onChange={() => setIsLoading(!isLoading)}
-                />
-                <label htmlFor="loading">Loading Animation</label>
-            </div>
-
             <style>
                 {`
                     @keyframes bar {
@@ -77,7 +79,7 @@ import { useState } from "react";
                             transform: translateX(0);
                           }
                           100% {
-                            transform: translateX(-20%);
+                            transform: translateX(-30%);
                           }
                     }
                 `}

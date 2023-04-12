@@ -5,8 +5,20 @@ function ProgressBarAccelerating() {
 
     const [isLoading, setIsLoading] = useState(false);
 
+
+
     return (
         <div>
+
+            <div style={{ marginBottom: "1em", fontSize: "22px" }}>
+                <input
+                    type="checkbox"
+                    style={{ transform: "scale(1.5)" }}
+                    checked={isLoading}
+                    onChange={() => setIsLoading(!isLoading)}
+                />
+                <label htmlFor="loading" style={{ marginLeft: "1em" }}>Huk av for å starte lasting</label>
+            </div>
             <div className="bar" style={{
                 background: '#efefef',
                 position: 'relative',
@@ -27,14 +39,6 @@ function ProgressBarAccelerating() {
                     width: isLoading ? "100%" : "0%"
                 }}></div>
 
-            </div>
-            <div style={{ marginBottom: "1em" }}>
-                <input
-                    type="checkbox"
-                    checked={isLoading}
-                    onChange={() => setIsLoading(!isLoading)}
-                />
-                <label htmlFor="loading">Loading Animation</label>
             </div>
 
             <Head>
