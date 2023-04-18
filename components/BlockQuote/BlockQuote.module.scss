@@ -1,0 +1,20 @@
+.blockquote {
+    margin: 0;
+    padding: 1em 1em 1em 2em;
+    position: relative;
+    font-size: 1.1em;
+    font-style: italic;
+    border-left: 0.25em solid #ccc;
+    font-size: 22px;
+    margin: 20px;
+
+    &:before {
+        content: "\201C";
+        /* Left double quotation mark */
+        position: absolute;
+        left: 0.1em;
+        font-size: 3em;
+        top: 0.0em;
+        color: #ccc;
+    }
+}

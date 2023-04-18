@@ -1,44 +1,27 @@
 import Head from "next/head";
 import { useRef, useState, useEffect } from "react";
+import ActionButton from "../ActionButton/ActionButton";
+import { Button } from '../Button/Button';
 
 const ProgressBar: React.FC<{}> = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   let style=`
-  /* Custom checkbox container */
-.custom-checkbox {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 16px;
-  user-select: none;
-  margin: 20px;
-  background-color: #333; /* Dark background color to contrast the white arrow */
-  padding: 10px;
-  border-radius: 5px;
-}
-
-/* Hide default checkbox */
-.custom-checkbox input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 2;
-}
+  
 
   `
 
   return (
     <>
-      <div style={{ marginBottom: "1em", fontSize: "22px" }}>
-        <input
-          type="checkbox"
-          style={{transform: "scale(1.5)"}}
-          checked={isLoading}
-          onChange={() => setIsLoading(!isLoading)}
-        />
-        <label htmlFor="loading" style={{marginLeft: "1em"}}>Huk av for å starte lasting</label>
-      </div>
+      <Head>
+        <style>
+          {style}
+        </style>
+        </Head>
+      <ActionButton 
+          text="Klikk her for å starte lastingen"
+          onClick={() => {setIsLoading(false); setTimeout(()=>setIsLoading(true), 1)}}
+      />
       <div
         className="bar"
         style={{

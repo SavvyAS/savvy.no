@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ActionButton from "../ActionButton/ActionButton";
 
     const  ProgressBarCounterAccFlow: React.FC<{ hasCompleted: boolean, estimatedDuration: number, makeFaster: boolean}> = (
         { makeFaster }) => {
@@ -6,17 +7,10 @@ import { useState } from "react";
 
     return (
         <div>
-             <div style={{ marginBottom: "1em", fontSize: "22px" }}>
-                <input
-                    type="checkbox"
-                    style={{ transform: "scale(1.5)" }}
-                    checked={isLoading}
-                    onChange={() => setIsLoading(!isLoading)}
+            <ActionButton 
+                    text="Klikk her for å starte lastingen"
+                    onClick={() => {setIsLoading(false); setTimeout(()=>setIsLoading(true), 1)}}
                 />
-                <label htmlFor="loading" style={{ marginLeft: "1em" }}>
-                    Huk av for å starte lasting
-                </label>
-            </div>
             <div className="bar" style={{
                     background: '#efefef',
                     position: 'relative',
