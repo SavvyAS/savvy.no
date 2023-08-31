@@ -12,6 +12,7 @@ config.autoAddCss = false
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { agency } = content.pages as Pages
+  const ga_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 
   return (
     <Layout>
@@ -20,18 +21,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content={agency.ingress}></meta>
         <title>Savvy</title>
       </Head>
-      {!!process.env.GOOGLE_ANALYTICS_ID && process.env.ENV === 'production' && (
-        <>
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-                  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-                  ga('create', ${process.env.GOOGLE_ANALYTICS_ID}, 'auto');
-                  ga('send', 'pageview');
-                `}
-          </Script>
-          <Script src="https://www.google-analytics.com/analytics.js" strategy="afterInteractive" />
-        </>
-      )}
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${ga_id}`}></Script>
+      <Script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${ga_id}');
+          `}
+      </Script>
       <Component {...pageProps} />
     </Layout>
   )
