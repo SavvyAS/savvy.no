@@ -60,10 +60,12 @@
     border-radius: 50%;
     width: base(2);
     height: base(2);
-    display: grid;
-    place-items: center;
     background: transparent;
     color: $color-secondary;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media screen and (min-width: map-get($breakpoints, 'md')) {
