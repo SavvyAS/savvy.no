@@ -70,13 +70,16 @@
   width: base(2);
   height: base(2);
   border-radius: 50%;
-  outline: 0;
   background: transparent;
   color: white;
   top: base(1);
   right: base(1);
   position: absolute;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     transform: rotate(90deg);
