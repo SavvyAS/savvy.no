@@ -9,7 +9,6 @@ import Head from 'next/head'
 import React, { ReactNode, useState } from 'react'
 import { BaseModal } from 'components/Modals/BaseModal'
 import { CvForm } from 'components/Forms/CvForm'
-import ParallaxImage from '@/components/ParallaxImage/ParallaxImage'
 
 export default function Page() {
   const { agency } = content.pages as Pages
@@ -136,19 +135,20 @@ export default function Page() {
                   alignRight={index % 2 !== 0}
                   image={
                     <div className={styles['card-image-wrapper']}>
-                      <div style={{
-                        width: '100%',
-                        aspectRatio: index % 2 !== 0 ? '3/4' : '4/3',
-                        background: `
+                      <div
+                        style={{
+                          width: '100%',
+                          aspectRatio: index % 2 !== 0 ? '3/4' : '4/3',
+                          background: `
                           url(${employee.imagePath}),
                           linear-gradient(to bottom right, rgba(154, 32, 126, 1.0), rgba(81, 3, 45, 1.0))
                         `,
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "top",
-                        backgroundBlendMode: "multiply",
-                      }}>
-                      </div>
+                          backgroundSize: 'cover',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundPosition: 'top',
+                          backgroundBlendMode: 'multiply'
+                        }}
+                      ></div>
                       {index === 1 && (
                         <div className={styles.graffiti}>
                           <Image

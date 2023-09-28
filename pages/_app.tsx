@@ -6,10 +6,6 @@ import content from '@/lib/content.json'
 import { Pages } from '@/lib/content.interface'
 import Script from 'next/script'
 
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
-
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { agency } = content.pages as Pages
   const ga_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
