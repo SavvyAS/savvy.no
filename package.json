@@ -12,20 +12,17 @@
     "doppler:setup": "doppler setup --project 'savvy-no' --config 'dev'"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/pro-regular-svg-icons": "^6.2.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.4",
     "@types/node": "18.11.8",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "clsx": "^1.2.1",
     "next": "latest",
-    "next-export-optimize-images": "^1.9.0",
+    "next-export-optimize-images": "3.2.0",
     "next-sitemap": "^3.1.30",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-scroll-parallax": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "typescript": "4.8.4"
   },
   "devDependencies": {

@@ -1,8 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import styles from './Button.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight, faPlus } from '@fortawesome/pro-regular-svg-icons'
+import { FaLongArrowAltRight, FaPlus } from 'react-icons/fa'
 
 interface Props extends React.PropsWithChildren {
   type?: 'button' | 'submit'
@@ -34,11 +33,7 @@ export const Button = ({
     <button type={type} onClick={onClick} className={buttonStyle}>
       <div className={styles['button__content']}>{children}</div>
       <div className={styles['button__icon']}>
-        {icon === 'arrow' ? (
-          <FontAwesomeIcon icon={faLongArrowRight} />
-        ) : (
-          <FontAwesomeIcon icon={faPlus} />
-        )}
+        {icon === 'arrow' ? <FaLongArrowAltRight /> : <FaPlus />}
       </div>
     </button>
   )

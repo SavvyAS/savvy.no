@@ -5,8 +5,7 @@ import styles from './Nav.module.scss'
 import { useState } from 'react'
 import { MobileMenuModal } from '../Modals/MobileMenuModal'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEquals } from '@fortawesome/pro-regular-svg-icons'
+import { FaEquals } from 'react-icons/fa'
 
 export const Nav = () => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
@@ -61,7 +60,7 @@ export const Nav = () => {
                 aria-label="Open menu"
                 onClick={() => setModalIsOpen(true)}
               >
-                <FontAwesomeIcon icon={faEquals} />
+                <FaEquals />
               </button>
             </div>
           </div>
